@@ -27,12 +27,3 @@
 | remove_top_5pct | -0.36% | -2.09% |
 | remove_20pct | 0.69% | -1.59% |
 
-## 未完成的生产条件
-
-- Historical PIT security master and delisting reconciliation unavailable
-- Retrospective adjusted prices; raw execution/action reconciliation incomplete
-- Borrow availability and observed spreads/fills unavailable
-- ETF prototype; 200–500-stock universe not collected
-- 2025–2026 already inspected in previous project: not blind OOS
-
-本次为 ETF 原型，不是美股 400 标的 PIT 回测。IEX 成交量不能解释为全市场 ADV，结果不能与全市场数据直接等同比较。成本为预设代理；不能据此宣称可交易 alpha。market cap/历史行业标签缺失，未补造。paper_targets.csv 中 research_weight 仅供观察，approved_weight 均为 0。下一步需要本机配置 Alpaca 凭据，获得历史证券主表及公司行为数据，并完成真实 paper 成交对账和 2–3 个月前瞻观察。
