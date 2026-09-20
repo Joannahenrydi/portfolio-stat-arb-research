@@ -1,0 +1,2 @@
+[console_scripts]
+pairs-trader = pairs_trading.cli:main

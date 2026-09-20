@@ -1,0 +1,106 @@
+{
+  "output/portfolio_v1/market_data/raw_9.csv": {
+    "sha256": "c6085a52356280afaec382781bd7cf549745f72bc6306bd692cccceae4fbc915",
+    "bytes": 328507
+  },
+  "output/portfolio_v1/market_data/raw_8.csv": {
+    "sha256": "046a786343142df0b5ff5b4510bdfecb3ca37fe79116b8220653c204d34bd0b3",
+    "bytes": 330745
+  },
+  "output/portfolio_v1/market_data/raw_21.csv": {
+    "sha256": "1059360cfaa2f8fd09ca1d97a1c2befdee2511beea5ed6dc01385edeff3656e7",
+    "bytes": 325555
+  },
+  "output/portfolio_v1/market_data/raw_20.csv": {
+    "sha256": "b1dff3b4fd6e97f8619075f002c6c72ac2b85b014beb504232c29fb45c962778",
+    "bytes": 280485
+  },
+  "output/portfolio_v1/market_data/raw_22.csv": {
+    "sha256": "269efdca9a05441902c5dd61d9ba72b2336b5e36247f0d5391afe57e239a215d",
+    "bytes": 330780
+  },
+  "output/portfolio_v1/market_data/prices.csv": {
+    "sha256": "3d5d2b20619c88874501add4101d38a5c33c9f2c6bd129635fedf49f598eafbf",
+    "bytes": 893230
+  },
+  "output/portfolio_v1/market_data/raw_18.csv": {
+    "sha256": "2986b96e64562afd5f80774cf8db922f81ce12c89ff031df7cf780ce6707dbbf",
+    "bytes": 331911
+  },
+  "output/portfolio_v1/market_data/raw_19.csv": {
+    "sha256": "95fa9f4e1a0fd41d5913f57a076264491877ae578f603542f21423ee577b3311",
+    "bytes": 325628
+  },
+  "output/portfolio_v1/market_data/raw_14.csv": {
+    "sha256": "358f5e1cf005505e45028d110a1ca9d212a12addeefd65847f8159fe918dbb46",
+    "bytes": 334713
+  },
+  "output/portfolio_v1/market_data/raw_15.csv": {
+    "sha256": "91c77958bd7fd8258d08c6266b0deb7b3f5466e6c7d2a6a73979792bc9fc5f3d",
+    "bytes": 329817
+  },
+  "output/portfolio_v1/market_data/raw_17.csv": {
+    "sha256": "0d8621c64432848da30225098d236dfb7623b7c433632a53fc2a30f2e947a34b",
+    "bytes": 328987
+  },
+  "output/portfolio_v1/market_data/raw_16.csv": {
+    "sha256": "b71004ee3d0a462f1fd937c03eb5e774f0c6c0bff1926a130136e32d4177f2fd",
+    "bytes": 333655
+  },
+  "output/portfolio_v1/market_data/raw_12.csv": {
+    "sha256": "160e16f8d3fc6ff28e71a064cf26de1272a0bd11472ab8382c4e5077c99ccc4c",
+    "bytes": 330327
+  },
+  "output/portfolio_v1/market_data/raw_13.csv": {
+    "sha256": "b2aa2ffdab437621e9d6327fa55c5524d9047254694f58100e5e059eae51b51a",
+    "bytes": 325355
+  },
+  "output/portfolio_v1/market_data/raw_11.csv": {
+    "sha256": "c1789f30eb977b1a7327e6be3341c30b37801e3213d9fbf46d52b125ce77c205",
+    "bytes": 329099
+  },
+  "output/portfolio_v1/market_data/raw_10.csv": {
+    "sha256": "b094646b84b4098a12ee0a0199a3b207e2574a60d73c95691dc4731e919d78cf",
+    "bytes": 332779
+  },
+  "output/portfolio_v1/market_data/raw_3.csv": {
+    "sha256": "470a12378f2d97761f0cb9b0c6c955864ce7166de5af33f7ad1a01653f7bae20",
+    "bytes": 325575
+  },
+  "output/portfolio_v1/market_data/raw_2.csv": {
+    "sha256": "51d80ba4d8e9d3c301a204e065e94a6e6f21b9dde949a9c82ae956071bc73c12",
+    "bytes": 334904
+  },
+  "output/portfolio_v1/market_data/raw_0.csv": {
+    "sha256": "ca416250aa705b3f3b9c700791cb638fdf312cecf7a5bef510b4224feab579e2",
+    "bytes": 334046
+  },
+  "output/portfolio_v1/market_data/raw_1.csv": {
+    "sha256": "0b6a893ecb1bdbea003c91e80d62be43ddcdc373ed0c9e2300a6936d1aa39e40",
+    "bytes": 327755
+  },
+  "output/portfolio_v1/market_data/raw_5.csv": {
+    "sha256": "444d537564e449c8de91f7361afd1dc4debd49b8a13a2aa097a5071b4c75ffa6",
+    "bytes": 329154
+  },
+  "output/portfolio_v1/market_data/raw_4.csv": {
+    "sha256": "f1fc687aa262f0d79d352e560f5ee8c00b8cf2210b042f32f68aaef909b7529a",
+    "bytes": 328349
+  },
+  "output/portfolio_v1/market_data/raw_6.csv": {
+    "sha256": "8e4367d75c0b61cee3c3163494fbc683c08147cbe1afaf8670f3133e36bf9ca3",
+    "bytes": 332603
+  },
+  "output/portfolio_v1/market_data/raw_7.csv": {
+    "sha256": "e96ba94968ff680bab240493d213982c6f6e06b22f8e61643871addbf9063a78",
+    "bytes": 327853
+  },
+  "output/portfolio_v1/alpaca_data/bars_raw.csv": {
+    "sha256": "4fa5b847cf7cf507a6faa2d956eeea803bb18dbba3fcc6ec2b14647eea06f1cc",
+    "bytes": 2714200
+  },
+  "output/portfolio_v1/alpaca_data/bars_all.csv": {
+    "sha256": "5cfb427ae89685a9bea99584f157647756f4e62f187f21e96528b5bf2b4a9636",
+    "bytes": 2557431
+  }
+}

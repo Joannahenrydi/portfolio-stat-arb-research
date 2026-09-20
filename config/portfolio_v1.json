@@ -1,0 +1,4 @@
+{
+  "groups": {"XLE":"energy","VDE":"energy","XLF":"financials","VFH":"financials","XLP":"staples","VDC":"staples","XLV":"health","VHT":"health","XLI":"industrial","VIS":"industrial","XLK":"technology","VGT":"technology","XLY":"discretionary","VCR":"discretionary","XLU":"utilities","VPU":"utilities","XLB":"materials","VAW":"materials","XLRE":"realestate","VNQ":"realestate","XLC":"communications","VOX":"communications"},
+  "market":"SPY", "start":"2017-01-01", "end_exclusive":"2026-09-19"
+}
