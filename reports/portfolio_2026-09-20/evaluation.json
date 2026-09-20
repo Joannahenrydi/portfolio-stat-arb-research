@@ -1,0 +1,619 @@
+{
+  "status": "REJECTED_RESEARCH_ONLY_CASH",
+  "statistical_pass": false,
+  "stress_pass": false,
+  "promotion_blockers": [
+    "Historical PIT security master and delisting reconciliation unavailable",
+    "Retrospective adjusted prices; raw execution/action reconciliation incomplete",
+    "Borrow availability and observed spreads/fills unavailable",
+    "ETF prototype; 200\u2013500-stock universe not collected",
+    "2025\u20132026 already inspected in previous project: not blind OOS"
+  ],
+  "metrics": {
+    "reversal": {
+      "train": {
+        "sessions": 1259,
+        "net_total_return": -0.22751606496220156,
+        "sharpe": -10.52729594704637,
+        "max_drawdown": -0.22751606496220156,
+        "mean_rank_ic": 0.0019232711291045984,
+        "mean_daily_turnover": 0.4736660759132341,
+        "hit_rate": 0.16521048451151707,
+        "transaction_cost_sum": 0.21337506187082098,
+        "borrow_cost_sum": 0.04809916629850566,
+        "yearly_returns": {
+          "2018": -0.047857481604292484,
+          "2019": -0.0541281817001632,
+          "2020": -0.04771511476882295,
+          "2021": -0.05055735629936542,
+          "2022": -0.051320347320781945
+        },
+        "max_abs_net": 6.631500903964138e-14,
+        "max_abs_beta": 6.370598493177226e-14,
+        "max_abs_group": 1.3461454173580023e-14,
+        "risk_liquidations": 37
+      },
+      "validation": {
+        "sessions": 502,
+        "net_total_return": -0.09727407473149252,
+        "sharpe": -17.718997274598244,
+        "max_drawdown": -0.09727407473149252,
+        "mean_rank_ic": 0.00310399816770325,
+        "mean_daily_turnover": 0.4780683069738444,
+        "hit_rate": 0.11155378486055777,
+        "transaction_cost_sum": 0.0855921167683073,
+        "borrow_cost_sum": 0.019004413469370013,
+        "yearly_returns": {
+          "2023": -0.04937498004459717,
+          "2024": -0.05038694930325194
+        },
+        "max_abs_net": 6.084716064336249e-14,
+        "max_abs_beta": 6.049327705426322e-14,
+        "max_abs_group": 2.385385725750533e-14,
+        "risk_liquidations": 15
+      },
+      "audit": {
+        "sessions": 429,
+        "net_total_return": -0.08089131954973705,
+        "sharpe": -14.06287169387668,
+        "max_drawdown": -0.08093226348518634,
+        "mean_rank_ic": 0.003095104368488371,
+        "mean_daily_turnover": 0.4754913806760969,
+        "hit_rate": 0.17482517482517482,
+        "transaction_cost_sum": 0.07271725487160349,
+        "borrow_cost_sum": 0.016409577429000226,
+        "yearly_returns": {
+          "2025": -0.0468107833457313,
+          "2026": -0.03575421921329591
+        },
+        "max_abs_net": 6.416395192943014e-14,
+        "max_abs_beta": 5.698219673888616e-14,
+        "max_abs_group": 4.53560800028896e-14,
+        "risk_liquidations": 8
+      }
+    },
+    "kalman": {
+      "train": {
+        "sessions": 1259,
+        "net_total_return": -0.22760509110412397,
+        "sharpe": -10.478870318224635,
+        "max_drawdown": -0.22760509110412397,
+        "mean_rank_ic": -0.00025682859026003455,
+        "mean_daily_turnover": 0.4769691384973565,
+        "hit_rate": 0.16282764098490865,
+        "transaction_cost_sum": 0.21485258127443702,
+        "borrow_cost_sum": 0.04793293342845063,
+        "yearly_returns": {
+          "2018": -0.049923918335382345,
+          "2019": -0.05396095300985593,
+          "2020": -0.047267932310144256,
+          "2021": -0.048766864656999864,
+          "2022": -0.05176888406490787
+        },
+        "max_abs_net": 6.76750322448072e-14,
+        "max_abs_beta": 7.26640969617165e-14,
+        "max_abs_group": 1.7590096046404824e-14,
+        "risk_liquidations": 41
+      },
+      "validation": {
+        "sessions": 502,
+        "net_total_return": -0.0991728778292017,
+        "sharpe": -18.477615111460974,
+        "max_drawdown": -0.0991728778292017,
+        "mean_rank_ic": 0.0034950719430373906,
+        "mean_daily_turnover": 0.4766761244391072,
+        "hit_rate": 0.09163346613545817,
+        "transaction_cost_sum": 0.08532784855478712,
+        "borrow_cost_sum": 0.0192083126325426,
+        "yearly_returns": {
+          "2023": -0.05011812245019209,
+          "2024": -0.051643005870945946
+        },
+        "max_abs_net": 4.9633908094648405e-14,
+        "max_abs_beta": 4.811082088274077e-14,
+        "max_abs_group": 2.1657155235832448e-14,
+        "risk_liquidations": 13
+      },
+      "audit": {
+        "sessions": 429,
+        "net_total_return": -0.08028567048044633,
+        "sharpe": -13.502286003921208,
+        "max_drawdown": -0.08028567048044633,
+        "mean_rank_ic": 0.006056928826475596,
+        "mean_daily_turnover": 0.4749512007649206,
+        "hit_rate": 0.1958041958041958,
+        "transaction_cost_sum": 0.0726310866242913,
+        "borrow_cost_sum": 0.01663349738800693,
+        "yearly_returns": {
+          "2025": -0.04730646793336046,
+          "2026": -0.03461680114018029
+        },
+        "max_abs_net": 6.064593272014918e-14,
+        "max_abs_beta": 5.3762549967473205e-14,
+        "max_abs_group": 5.423835209086847e-14,
+        "risk_liquidations": 7
+      }
+    },
+    "dislocation": {
+      "train": {
+        "sessions": 1259,
+        "net_total_return": -0.22318766225483933,
+        "sharpe": -15.401210790256686,
+        "max_drawdown": -0.22318766225483933,
+        "mean_rank_ic": 7.698861628411136e-05,
+        "mean_daily_turnover": 0.4861100040238114,
+        "hit_rate": 0.09610802223987291,
+        "transaction_cost_sum": 0.21897409742441906,
+        "borrow_cost_sum": 0.03256854362310058,
+        "yearly_returns": {
+          "2018": -0.04824371976686004,
+          "2019": -0.05175121636626767,
+          "2020": -0.05128424329376713,
+          "2021": -0.045556879650340054,
+          "2022": -0.04943481569366781
+        },
+        "max_abs_net": 5.102862576933376e-14,
+        "max_abs_beta": 4.912736883966318e-14,
+        "max_abs_group": 8.965050923848139e-15,
+        "risk_liquidations": 2
+      },
+      "validation": {
+        "sessions": 502,
+        "net_total_return": -0.09208864611929257,
+        "sharpe": -25.338945415382643,
+        "max_drawdown": -0.09208864611929257,
+        "mean_rank_ic": 0.0036300226966665384,
+        "mean_daily_turnover": 0.4838704662137261,
+        "hit_rate": 0.055776892430278883,
+        "transaction_cost_sum": 0.08658364411231194,
+        "borrow_cost_sum": 0.012673472900284685,
+        "yearly_returns": {
+          "2023": -0.04756332743494285,
+          "2024": -0.04674884952133984
+        },
+        "max_abs_net": 3.1991770343964276e-14,
+        "max_abs_beta": 3.085032229677154e-14,
+        "max_abs_group": 1.2274903316011887e-14,
+        "risk_liquidations": 3
+      },
+      "audit": {
+        "sessions": 429,
+        "net_total_return": -0.07384381272343432,
+        "sharpe": -17.983023580861005,
+        "max_drawdown": -0.07387844024957324,
+        "mean_rank_ic": 0.0085214096441587,
+        "mean_daily_turnover": 0.48721269087987934,
+        "hit_rate": 0.08158508158508158,
+        "transaction_cost_sum": 0.07450303595372577,
+        "borrow_cost_sum": 0.011347341845823557,
+        "yearly_returns": {
+          "2025": -0.04477326885402866,
+          "2026": -0.030433134795684214
+        },
+        "max_abs_net": 3.078266808120844e-14,
+        "max_abs_beta": 2.8477220581635265e-14,
+        "max_abs_group": 1.7659484985443896e-14,
+        "risk_liquidations": 0
+      }
+    },
+    "blend": {
+      "train": {
+        "sessions": 1259,
+        "net_total_return": -0.22815635665993728,
+        "sharpe": -11.773782723929063,
+        "max_drawdown": -0.22815635665993728,
+        "mean_rank_ic": 0.0012228844788445138,
+        "mean_daily_turnover": 0.482864747747405,
+        "hit_rate": 0.15091342335186655,
+        "transaction_cost_sum": 0.21748047070408572,
+        "borrow_cost_sum": 0.04522736511787707,
+        "yearly_returns": {
+          "2018": -0.048502771709124426,
+          "2019": -0.05509318544873787,
+          "2020": -0.04699622657587099,
+          "2021": -0.04948403649388955,
+          "2022": -0.05228274488893769
+        },
+        "max_abs_net": 5.204170427930421e-14,
+        "max_abs_beta": 5.863365348801608e-14,
+        "max_abs_group": 9.80118763926896e-15,
+        "risk_liquidations": 19
+      },
+      "validation": {
+        "sessions": 502,
+        "net_total_return": -0.09667307968234107,
+        "sharpe": -19.98852770758949,
+        "max_drawdown": -0.09667307968234107,
+        "mean_rank_ic": 0.0012735769663244475,
+        "mean_daily_turnover": 0.48207137847313164,
+        "hit_rate": 0.08167330677290836,
+        "transaction_cost_sum": 0.08627671132895587,
+        "borrow_cost_sum": 0.017664995984539238,
+        "yearly_returns": {
+          "2023": -0.04907216762428768,
+          "2024": -0.05005733393998035
+        },
+        "max_abs_net": 5.0556780983868066e-14,
+        "max_abs_beta": 5.0730253331465747e-14,
+        "max_abs_group": 3.045827479120078e-14,
+        "risk_liquidations": 6
+      },
+      "audit": {
+        "sessions": 429,
+        "net_total_return": -0.07754538163863112,
+        "sharpe": -14.734562887345328,
+        "max_drawdown": -0.07757627797878008,
+        "mean_rank_ic": 0.007180928110386355,
+        "mean_daily_turnover": 0.4826649498188188,
+        "hit_rate": 0.15384615384615385,
+        "transaction_cost_sum": 0.07381180188251606,
+        "borrow_cost_sum": 0.015346223303883324,
+        "yearly_returns": {
+          "2025": -0.04628541307355605,
+          "2026": -0.03277706873061237
+        },
+        "max_abs_net": 5.86475312758239e-14,
+        "max_abs_beta": 5.234701561107613e-14,
+        "max_abs_group": 4.314734333710213e-14,
+        "risk_liquidations": 5
+      }
+    }
+  },
+  "stress": {
+    "double_cost": {
+      "validation": {
+        "sessions": 502,
+        "net_total_return": -0.18562271041541156,
+        "sharpe": -38.97690238361355,
+        "max_drawdown": -0.18562271041541156,
+        "mean_rank_ic": 0.0012735769663244475,
+        "mean_daily_turnover": 0.48135462350780905,
+        "hit_rate": 0.0199203187250996,
+        "transaction_cost_sum": 0.1722196683585958,
+        "borrow_cost_sum": 0.03531423770532285,
+        "yearly_returns": {
+          "2023": -0.09705068216086121,
+          "2024": -0.09809191557563146
+        },
+        "max_abs_net": 5.071637554365793e-14,
+        "max_abs_beta": 5.08759701034478e-14,
+        "max_abs_group": 3.046868313205664e-14,
+        "risk_liquidations": 6
+      },
+      "audit": {
+        "sessions": 429,
+        "net_total_return": -0.15618552640018113,
+        "sharpe": -30.403030340419132,
+        "max_drawdown": -0.15618552640018113,
+        "mean_rank_ic": 0.007180928110386355,
+        "mean_daily_turnover": 0.48243423405639196,
+        "hit_rate": 0.030303030303030304,
+        "transaction_cost_sum": 0.1474988912506276,
+        "borrow_cost_sum": 0.030693343594998986,
+        "yearly_returns": {
+          "2025": -0.09430480544493536,
+          "2026": -0.06832400274095018
+        },
+        "max_abs_net": 5.86995729801032e-14,
+        "max_abs_beta": 5.23192600354605e-14,
+        "max_abs_group": 4.315558327361302e-14,
+        "risk_liquidations": 5
+      }
+    },
+    "delay_one_more": {
+      "validation": {
+        "sessions": 502,
+        "net_total_return": -0.09974604397261089,
+        "sharpe": -20.580936529487136,
+        "max_drawdown": -0.09974604397261089,
+        "mean_rank_ic": -0.0005916290737201876,
+        "mean_daily_turnover": 0.4834449784355008,
+        "hit_rate": 0.07569721115537849,
+        "transaction_cost_sum": 0.08651949254143955,
+        "borrow_cost_sum": 0.017441122040238927,
+        "yearly_returns": {
+          "2023": -0.05029357161301251,
+          "2024": -0.05207132528690017
+        },
+        "max_abs_net": 5.05914754533876e-14,
+        "max_abs_beta": 5.074413111927356e-14,
+        "max_abs_group": 3.046174423815273e-14,
+        "risk_liquidations": 12
+      },
+      "audit": {
+        "sessions": 429,
+        "net_total_return": -0.08831167654358929,
+        "sharpe": -15.960619486177043,
+        "max_drawdown": -0.08831167654358929,
+        "mean_rank_ic": -0.006178085911330602,
+        "mean_daily_turnover": 0.48306936051880867,
+        "hit_rate": 0.11655011655011654,
+        "transaction_cost_sum": 0.07386813686563069,
+        "borrow_cost_sum": 0.015433594965523989,
+        "yearly_returns": {
+          "2025": -0.05270165003290905,
+          "2026": -0.037591141705163644
+        },
+        "max_abs_net": 5.866487851058366e-14,
+        "max_abs_beta": 5.234701561107613e-14,
+        "max_abs_group": 4.4552903033512337e-14,
+        "risk_liquidations": 6
+      }
+    },
+    "horizon_2": {
+      "validation": {
+        "sessions": 502,
+        "net_total_return": -0.09657583102316403,
+        "sharpe": -20.616731290033158,
+        "max_drawdown": -0.09657583102316403,
+        "mean_rank_ic": 0.0024772105345602954,
+        "mean_daily_turnover": 0.4829788891724798,
+        "hit_rate": 0.08366533864541832,
+        "transaction_cost_sum": 0.08643829098860825,
+        "borrow_cost_sum": 0.01719431942087233,
+        "yearly_returns": {
+          "2023": -0.04918811002310197,
+          "2024": -0.04983921793533008
+        },
+        "max_abs_net": 9.019868185689006e-14,
+        "max_abs_beta": 8.690270725253413e-14,
+        "max_abs_group": 2.683964162031316e-14,
+        "risk_liquidations": 6
+      },
+      "audit": {
+        "sessions": 429,
+        "net_total_return": -0.07722873757320814,
+        "sharpe": -14.850529324827995,
+        "max_drawdown": -0.07724723595517868,
+        "mean_rank_ic": 0.0052983613684648555,
+        "mean_daily_turnover": 0.48382509330228646,
+        "hit_rate": 0.13752913752913754,
+        "transaction_cost_sum": 0.07398929821419087,
+        "borrow_cost_sum": 0.01475505650735943,
+        "yearly_returns": {
+          "2025": -0.04657373588991598,
+          "2026": -0.03215246195457455
+        },
+        "max_abs_net": 2.986499936241671e-14,
+        "max_abs_beta": 2.687260136635672e-14,
+        "max_abs_group": 4.2297355938927805e-14,
+        "risk_liquidations": 6
+      }
+    },
+    "horizon_5": {
+      "validation": {
+        "sessions": 502,
+        "net_total_return": -0.09941002278883204,
+        "sharpe": -19.480686459275336,
+        "max_drawdown": -0.09941002278883204,
+        "mean_rank_ic": 0.003835295025777157,
+        "mean_daily_turnover": 0.48144611049973374,
+        "hit_rate": 0.099601593625498,
+        "transaction_cost_sum": 0.08615005935744324,
+        "borrow_cost_sum": 0.018135185010641333,
+        "yearly_returns": {
+          "2023": -0.05088172724536333,
+          "2024": -0.05112987173097461
+        },
+        "max_abs_net": 5.948019854429276e-14,
+        "max_abs_beta": 5.959815974065918e-14,
+        "max_abs_group": 2.6000035457940385e-14,
+        "risk_liquidations": 14
+      },
+      "audit": {
+        "sessions": 429,
+        "net_total_return": -0.07898664434235314,
+        "sharpe": -14.526246847611977,
+        "max_drawdown": -0.07900470204709487,
+        "mean_rank_ic": 0.005733696141713143,
+        "mean_daily_turnover": 0.4801380764338559,
+        "hit_rate": 0.14918414918414918,
+        "transaction_cost_sum": 0.0734240527198483,
+        "borrow_cost_sum": 0.015964105394384545,
+        "yearly_returns": {
+          "2025": -0.04747225986903836,
+          "2026": -0.03308500439995821
+        },
+        "max_abs_net": 5.937611513573415e-14,
+        "max_abs_beta": 5.2707838094079307e-14,
+        "max_abs_group": 4.5646646185115713e-14,
+        "risk_liquidations": 8
+      }
+    },
+    "alternate_days": {
+      "validation": {
+        "sessions": 502,
+        "net_total_return": -0.05670518315803974,
+        "sharpe": -10.464986255973304,
+        "max_drawdown": -0.05670518315803974,
+        "mean_rank_ic": 0.0012735769663244475,
+        "mean_daily_turnover": 0.24254095599084213,
+        "hit_rate": 0.26095617529880477,
+        "transaction_cost_sum": 0.04342268859192902,
+        "borrow_cost_sum": 0.016082713277953506,
+        "yearly_returns": {
+          "2023": -0.028814651227484722,
+          "2024": -0.02871803200676948
+        },
+        "max_abs_net": 0.0004979233904410553,
+        "max_abs_beta": 0.001427818790174458,
+        "max_abs_group": 0.0005242004662166372,
+        "risk_liquidations": 2
+      },
+      "audit": {
+        "sessions": 429,
+        "net_total_return": -0.0479450431742694,
+        "sharpe": -8.166875798806096,
+        "max_drawdown": -0.048281712747014094,
+        "mean_rank_ic": 0.007180928110386355,
+        "mean_daily_turnover": 0.2436368415041565,
+        "hit_rate": 0.2703962703962704,
+        "transaction_cost_sum": 0.037261882724023136,
+        "borrow_cost_sum": 0.013914928261853978,
+        "yearly_returns": {
+          "2025": -0.029308409790647416,
+          "2026": -0.019199335372424686
+        },
+        "max_abs_net": 0.0005917373616444177,
+        "max_abs_beta": 0.0016355684447226237,
+        "max_abs_group": 0.001006682358059563,
+        "risk_liquidations": 1
+      }
+    },
+    "remove_top_5pct": {
+      "validation": {
+        "sessions": 502,
+        "net_total_return": -0.09521458207772193,
+        "sharpe": -19.554820515904012,
+        "max_drawdown": -0.09521458207772193,
+        "mean_rank_ic": -0.0066814689321093475,
+        "mean_daily_turnover": 0.47355634684791387,
+        "hit_rate": 0.08366533864541832,
+        "transaction_cost_sum": 0.08494439580773441,
+        "borrow_cost_sum": 0.016452423921461796,
+        "yearly_returns": {
+          "2023": -0.04814837061306543,
+          "2024": -0.04944700414598269
+        },
+        "max_abs_net": 8.872069745535782e-14,
+        "max_abs_beta": 4.4950154709511025e-14,
+        "max_abs_group": 1.1158611699217251e-13,
+        "risk_liquidations": 8
+      },
+      "audit": {
+        "sessions": 429,
+        "net_total_return": -0.07496761919392403,
+        "sharpe": -13.73659481176047,
+        "max_drawdown": -0.07496761919392403,
+        "mean_rank_ic": 0.0010313970723097986,
+        "mean_daily_turnover": 0.4743868065272403,
+        "hit_rate": 0.17482517482517482,
+        "transaction_cost_sum": 0.07269836506091393,
+        "borrow_cost_sum": 0.014436083467329964,
+        "yearly_returns": {
+          "2025": -0.0450358729076632,
+          "2026": -0.031343320065222224
+        },
+        "max_abs_net": 4.338196468722799e-14,
+        "max_abs_beta": 3.587408148320037e-14,
+        "max_abs_group": 4.8433158127552417e-14,
+        "risk_liquidations": 6
+      }
+    },
+    "remove_20pct": {
+      "validation": {
+        "sessions": 502,
+        "net_total_return": -0.08936520701099393,
+        "sharpe": -19.869124264374147,
+        "max_drawdown": -0.08936520701099393,
+        "mean_rank_ic": 0.01203948417538273,
+        "mean_daily_turnover": 0.44909514073859674,
+        "hit_rate": 0.09561752988047809,
+        "transaction_cost_sum": 0.08084538441827407,
+        "borrow_cost_sum": 0.01400932612181897,
+        "yearly_returns": {
+          "2023": -0.0462060566780329,
+          "2024": -0.04524997315734858
+        },
+        "max_abs_net": 6.475723098480456e-14,
+        "max_abs_beta": 6.436517985264345e-14,
+        "max_abs_group": 8.68362624760579e-14,
+        "risk_liquidations": 13
+      },
+      "audit": {
+        "sessions": 429,
+        "net_total_return": -0.07056885558192538,
+        "sharpe": -15.214264201866323,
+        "max_drawdown": -0.07056885558192538,
+        "mean_rank_ic": 0.017488457049535305,
+        "mean_daily_turnover": 0.42424260267517655,
+        "hit_rate": 0.13986013986013987,
+        "transaction_cost_sum": 0.06528517159231224,
+        "borrow_cost_sum": 0.011752189156650519,
+        "yearly_returns": {
+          "2025": -0.04135458151995597,
+          "2026": -0.030474535734275054
+        },
+        "max_abs_net": 5.329341846886735e-14,
+        "max_abs_beta": 4.232378336688214e-14,
+        "max_abs_group": 2.654736244230962e-14,
+        "risk_liquidations": 19
+      }
+    }
+  },
+  "best_validation_names_removed": [
+    "VGT",
+    "VDE"
+  ],
+  "protocol_sha256": "e21a8f6c65e9a07e3f294acc0fc901d43504ece2978e8870641a9a59c3ee0484",
+  "source": {
+    "provider": "Yahoo Finance via yfinance (unofficial research interface)",
+    "yfinance_version": "1.7.0",
+    "retrieved_at_utc": "2026-09-20T02:58:43.518629+00:00",
+    "symbols": [
+      "XLE",
+      "VDE",
+      "XLF",
+      "VFH",
+      "XLP",
+      "VDC",
+      "XLV",
+      "VHT",
+      "XLI",
+      "VIS",
+      "XLK",
+      "VGT",
+      "XLY",
+      "VCR",
+      "XLU",
+      "VPU",
+      "XLB",
+      "VAW",
+      "XLRE",
+      "VNQ",
+      "XLC",
+      "VOX",
+      "SPY"
+    ],
+    "requested_start": "2017-01-01",
+    "requested_end_exclusive": "2026-09-19",
+    "price_field": "Adj Close",
+    "interval": "1d",
+    "source_rows": {
+      "XLE": 2441,
+      "VDE": 2441,
+      "XLF": 2441,
+      "VFH": 2441,
+      "XLP": 2441,
+      "VDC": 2441,
+      "XLV": 2441,
+      "VHT": 2441,
+      "XLI": 2441,
+      "VIS": 2441,
+      "XLK": 2441,
+      "VGT": 2441,
+      "XLY": 2441,
+      "VCR": 2441,
+      "XLU": 2441,
+      "VPU": 2441,
+      "XLB": 2441,
+      "VAW": 2441,
+      "XLRE": 2441,
+      "VNQ": 2441,
+      "XLC": 2074,
+      "VOX": 2441,
+      "SPY": 2441
+    },
+    "aligned_rows": 2074,
+    "dropped_noncommon_dates": 367,
+    "first_date": "2018-06-19",
+    "last_date": "2026-09-18",
+    "sha256": "3d5d2b20619c88874501add4101d38a5c33c9f2c6bd129635fedf49f598eafbf",
+    "limitations": [
+      "Adjusted prices are total-return research proxies, not executable quotes.",
+      "Current adjustment factors are not point-in-time corporate-action data.",
+      "Daily-date alignment does not establish simultaneous cross-market closes."
+    ]
+  },
+  "paper_orders_submitted": 0
+}

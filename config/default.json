@@ -1,0 +1,15 @@
+{
+  "formation_window": 126,
+  "z_window": 60,
+  "entry_z": 1.0,
+  "exit_z": 0.15,
+  "stop_z": 3.5,
+  "max_holding_bars": 60,
+  "process_variance": 0.00001,
+  "measurement_variance": null,
+  "initial_capital": 100000.0,
+  "gross_pair_fraction": 0.2,
+  "commission_bps": 1.0,
+  "slippage_bps": 2.0,
+  "max_data_age_hours": 96
+}
