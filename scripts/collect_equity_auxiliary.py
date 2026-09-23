@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 import pandas as pd
-from collect_equity_snapshot import Reader, utcnow
+from collect_week1_alpaca import Reader, utcnow
 
 
 def collect(source: Path, output: Path, symbols_file: Path | None = None):

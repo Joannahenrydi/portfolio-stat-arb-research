@@ -11,14 +11,14 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from pairs_trading.equity_backtest import (
+from backtest.engine import (
     FastPortfolioConfig,
     candidate_scores,
     performance_metrics,
     residual_returns,
     run_fast_backtest,
 )
-from pairs_trading.equity_portfolio import PortfolioCosts
+from portfolio.optimizer import PortfolioCosts
 
 TRAIN = (pd.Timestamp("2018-01-02"), pd.Timestamp("2022-12-30"))
 VALIDATION = (pd.Timestamp("2023-01-03"), pd.Timestamp("2024-12-31"))

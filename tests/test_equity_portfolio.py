@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from pairs_trading.equity_portfolio import (
+from portfolio.optimizer import (
     PortfolioConstraints,
     PortfolioCosts,
     construct_portfolio,

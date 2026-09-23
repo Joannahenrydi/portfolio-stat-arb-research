@@ -10,13 +10,13 @@ from pathlib import Path
 import pandas as pd
 from evaluate_equity_v2 import AUDIT, TRAIN, VALIDATION, read_panel, segment_metrics, sha256
 
-from pairs_trading.equity_backtest import (
+from backtest.engine import (
     FastPortfolioConfig,
     candidate_scores,
     residual_returns,
     run_fast_backtest,
 )
-from pairs_trading.equity_portfolio import PortfolioCosts
+from portfolio.optimizer import PortfolioCosts
 
 
 def main(source: Path, v2_output: Path, output: Path) -> None:

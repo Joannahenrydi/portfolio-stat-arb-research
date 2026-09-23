@@ -11,8 +11,8 @@ import numpy as np
 import pandas as pd
 from evaluate_equity_v2 import AUDIT, TRAIN, VALIDATION, read_panel, segment_metrics, sha256
 
-from pairs_trading.equity_backtest import FastPortfolioConfig, residual_returns, run_fast_backtest
-from pairs_trading.equity_portfolio import PortfolioCosts
+from backtest.engine import FastPortfolioConfig, residual_returns, run_fast_backtest
+from portfolio.optimizer import PortfolioCosts
 
 
 def build_signals(

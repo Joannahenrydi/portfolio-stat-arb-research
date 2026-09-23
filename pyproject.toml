@@ -22,10 +22,12 @@ alpaca = ["alpaca-py>=0.42,<1"]
 dev = ["pytest>=8,<9", "ruff>=0.8,<1"]
 
 [project.scripts]
-pairs-trader = "pairs_trading.cli:main"
+market-neutral-shadow = "live.generate_shadow:cli"
+market-neutral-paper = "live.run_paper:cli"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["."]
+include = ["data*", "features*", "models*", "portfolio*", "execution*", "risk*", "backtest*", "live*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

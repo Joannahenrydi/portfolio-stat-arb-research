@@ -29,6 +29,10 @@
 成本包括 0.5 bps commission、2 bps half-spread、1 bp slippage、平方根冲击和 3% 年化借券。
 信号在收盘 `t` 形成，最早只能赚取 `t` 到 `t+1` 的收益。
 
+另用 2018–2022 的 379,947 个完成标签校准胜出 signal，并以 2026-09-18 以前的 252 日收益估计
+shrinkage covariance，实际运行 356 股票的成本感知优化器。最优解为 `NO_ECONOMIC_TRADE`：预期
+alpha 不足以覆盖成本，理论目标为全现金。该结果保存在 `optimized_portfolio/`，不改变拒绝结论。
+
 ## 时间检验结果
 
 v2 在 9 个预先冻结候选中按验证 Sharpe 选择 252 日 residual momentum、跳过最近 21 日：
@@ -56,7 +60,7 @@ v2 胜者在双倍成本下验证 CAGR 为 -1.35%、Sharpe -0.32；删除验证�
 | 2 | raw/all SIP panel、日历、数据质量、公司行动归档完成；历史身份仍非 CRSP 级 |
 | 3–5 | residual、Kalman、量价错位及扩展 alpha 完成并测试 |
 | 6 | 净值/行业/beta 中性化完成 |
-| 7 | 快速组合构造、gross/name/turnover/liquidity 限额完成；通用 400 名 SLSQP 被基准测试拒绝 |
+| 7 | 400 股票协方差感知组合优化完成；约束 dollar/beta/行业中性、gross/name/turnover/liquidity，并通过规模测试 |
 | 8 | commission/spread/slippage/impact/borrow 成本及持仓漂移完成 |
 | 9 | 固定时间切分、训练/验证/时间审计完成；真正未见数据已耗尽 |
 | 10 | 七项 kill tests 完成，策略拒绝 |

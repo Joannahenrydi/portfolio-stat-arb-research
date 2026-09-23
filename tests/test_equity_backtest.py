@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from pairs_trading.equity_backtest import (
+from backtest.engine import (
     FastPortfolioConfig,
     candidate_scores,
     prior_market_beta,

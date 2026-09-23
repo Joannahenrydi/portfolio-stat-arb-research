@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from pairs_trading.equity_alphas import (
+from features.alphas import (
     AlphaConfig,
     AlphaDataError,
     build_equity_features,
