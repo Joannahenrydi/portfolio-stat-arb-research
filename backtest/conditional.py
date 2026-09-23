@@ -21,6 +21,7 @@ class ConditionalConfig:
     max_turnover: float = 0.25
     max_participation: float = 0.001
     target_buffer: float = 0.95
+    conditioning_strength: float = 1.0
     nav: float = 100_000.0
     residual_vol_mode: str = "none"
     short_multiplier: float = 1.0
@@ -43,6 +44,7 @@ class ConditionalConfig:
             self.max_turnover,
             self.max_participation,
             self.target_buffer,
+            self.conditioning_strength,
             self.nav,
             self.neutrality_tolerance,
         )
@@ -184,7 +186,8 @@ def strict_neutral_target(
     ranked = score.loc[names].rank(method="average", pct=True) - 0.5
     ranked.loc[ranked < 0] *= config.short_multiplier
     vol_percentile = residual_volatility.loc[names].rank(method="average", pct=True)
-    ranked *= residual_volatility_multiplier(vol_percentile, config.residual_vol_mode)
+    vol_multiplier = residual_volatility_multiplier(vol_percentile, config.residual_vol_mode)
+    ranked *= 1 + config.conditioning_strength * (vol_multiplier - 1)
     desired = _project(ranked.to_numpy(dtype=float), basis)
     gross = np.abs(desired).sum()
     if gross <= config.neutrality_tolerance:
@@ -326,6 +329,7 @@ def run_conditional_backtest(
                 float(prior_market_drawdown.loc[session]),
                 artifact,
             )
+            scalar = float(np.clip(1 + config.conditioning_strength * (scalar - 1), 0, 1))
             try:
                 target, target_metrics = strict_neutral_target(
                     score.loc[session],
