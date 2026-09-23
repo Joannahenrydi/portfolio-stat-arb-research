@@ -46,29 +46,5 @@ v2 在 9 个预先冻结候选中按验证 Sharpe 选择 252 日 residual moment
 随后冻结的 v3 有 54 个动量集中度/调仓频率候选，v4 有 48 个不同价格路径 alpha 候选；
 两轮都没有候选同时满足训练和验证 Sharpe 为正。总计 111 个冻结候选，没有通过稳健晋级规则。
 
-## Kill tests
 
-v2 胜者在双倍成本下验证 CAGR 为 -1.35%、Sharpe -0.32；删除验证期贡献最大的 5% 股票后，
-验证 CAGR 为 -2.99%、Sharpe -0.83。延迟一根 bar、改为 10/21 日调仓、确定性删除 20% 股票
-未改变拒绝结论。完整数字见 `../equity_v2/robustness/kill_tests.csv`。
 
-## 十二周对应状态
-
-| 周 | 交付状态 |
-|---|---|
-| 1 | 研究协议、400 股票流动性筛选、时间切分完成；按用户要求使用当前 cohort 回填 |
-| 2 | raw/all SIP panel、日历、数据质量、公司行动归档完成；历史身份仍非 CRSP 级 |
-| 3–5 | residual、Kalman、量价错位及扩展 alpha 完成并测试 |
-| 6 | 净值/行业/beta 中性化完成 |
-| 7 | 400 股票协方差感知组合优化完成；约束 dollar/beta/行业中性、gross/name/turnover/liquidity，并通过规模测试 |
-| 8 | commission/spread/slippage/impact/borrow 成本及持仓漂移完成 |
-| 9 | 固定时间切分、训练/验证/时间审计完成；真正未见数据已耗尽 |
-| 10 | 七项 kill tests 完成，策略拒绝 |
-| 11–12 | shadow target/门控文件完成；因策略拒绝且尚未经过 2–3 个月，未提交 paper 订单 |
-
-## Paper 状态
-
-`promotion_decision.json` 是唯一晋级门。当前为 `REJECTED`，`orders_allowed=false`。
-`shadow_paper/shadow_targets.csv` 保留理论目标但将 `approved_weight` 全部设为 0；事件日志记录
-数据新鲜度、目标 gross、订单和成交数量。连续 2–3 个月的 paper 结果不能用历史回测伪造，
-只能从新的市场日期开始积累。
