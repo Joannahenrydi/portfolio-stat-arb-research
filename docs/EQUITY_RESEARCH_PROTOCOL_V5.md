@@ -78,15 +78,16 @@ These are continuous gross scalers, not binary market-timing switches.
 | E11 | E01 + ASYM_mild + REG_mild | yes |
 | E12 | E01 + RV_mild + ASYM_mild + REG_mild | yes |
 | E13 | Train-qualified low-correlation equal-risk alpha ensemble + strict neutral | conditional |
-| E14 | Train-only ridge ensemble, 21-session frozen refits + strict neutral | conditional |
+| E14 | Ridge ensemble fitted once on train and then frozen + strict neutral | conditional |
 
 E13/E14 alpha families are the baseline momentum, residual reversal, Kalman innovation
 and volume/volatility dislocation. A non-baseline family can enter only if train mean
 five-session rank IC is positive and its daily IC correlation with already admitted
 families is below 0.75. E13 cross-sectionally standardizes each admitted family and uses
-inverse train IC-volatility weights. E14 fits ridge coefficients only to labels completed
-by each refit boundary. If fewer than two families qualify, both ensemble experiments are
-blocked rather than silently redefined.
+inverse train IC-volatility weights. E14 fits ridge coefficients once using labels completed
+by the 2022-12-30 train boundary and applies that artifact unchanged thereafter. If fewer
+than two families qualify, both ensemble experiments are blocked rather than silently
+redefined.
 
 ## Mandatory diagnostics, not tuning dimensions
 
