@@ -1,0 +1,5 @@
+{
+  "status": "REJECTED",
+  "reason": "NO_CANDIDATE_PASSED_FROZEN_GATES",
+  "table_sha256": "024a003ac71c3553cce4ec67985695d143375e3e6ae76f3c1f2b799b45e9b598"
+}

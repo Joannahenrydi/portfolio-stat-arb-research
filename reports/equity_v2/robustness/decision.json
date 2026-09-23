@@ -1,0 +1,15 @@
+{
+  "selected_candidate": "momentum_252_skip_21",
+  "scenarios": [
+    "base",
+    "costs_x2",
+    "drop_deterministic_20pct",
+    "rebalance_10",
+    "rebalance_21",
+    "remove_validation_best_5pct",
+    "signal_delay_1"
+  ],
+  "base_passed_original_development_gate": false,
+  "robustness_decision": "REJECTED",
+  "reason": "base strategy has nonpositive training Sharpe and weak validation Sharpe"
+}

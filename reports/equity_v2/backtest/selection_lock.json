@@ -1,0 +1,7 @@
+{
+  "selected_candidate": "momentum_252_skip_21",
+  "selected_before_audit": true,
+  "selection_table_sha256": "5c02e394d26185395158491d188b6ca46590b8f999721a86d93bc48b3243bc03",
+  "protocol_sha256": "5bd0abc1942d69418d92f5d160e33fb6eeaaf239bb6af67a9ae986d1c69dc7ad",
+  "selection_rule": "validation_sharpe_then_validation_cagr_then_train_sharpe_then_name"
+}

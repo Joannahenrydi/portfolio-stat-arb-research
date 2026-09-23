@@ -1,0 +1,55 @@
+{
+  "hashes": {
+    "protocol": "5bd0abc1942d69418d92f5d160e33fb6eeaaf239bb6af67a9ae986d1c69dc7ad",
+    "universe": "24fa773e2199b462f60656d64c6e7e3d49bdc60dc6d683b43598de03b2f4f172",
+    "adjusted_bars": "7d6a10505c6190768e796e11b45e5fa6fbfe3daddb0551bdf9f646c7a0d92d48",
+    "raw_bars": "b25e4997afe224338c5b78e8179ae7c384a4ad330b3edb7047d0f7f5fd26f37d"
+  },
+  "config": {
+    "rebalance_every": 5,
+    "beta_window": 126,
+    "volatility_window": 60,
+    "adv_window": 60,
+    "max_gross": 1.0,
+    "max_name": 0.01,
+    "max_turnover": 0.25,
+    "max_participation": 0.001,
+    "nav": 100000.0
+  },
+  "costs": {
+    "commission_bps": 0.5,
+    "half_spread_bps": 2.0,
+    "slippage_bps": 1.0,
+    "impact_coefficient": 0.1,
+    "borrow_annual": 0.03,
+    "calendar_days": 1.0,
+    "multiplier": 1.0
+  },
+  "segments": {
+    "train": [
+      "2018-01-02",
+      "2022-12-30"
+    ],
+    "validation": [
+      "2023-01-03",
+      "2024-12-31"
+    ],
+    "audit": [
+      "2025-01-02",
+      "2026-09-18"
+    ]
+  },
+  "candidate_names": [
+    "blend_rev3_mom63",
+    "momentum_126_skip_21",
+    "momentum_21_skip_5",
+    "momentum_252_skip_21",
+    "momentum_63_skip_5",
+    "reversal_1",
+    "reversal_10",
+    "reversal_3",
+    "reversal_5"
+  ],
+  "data_scope": "research_snapshot_only",
+  "pit_verified": false
+}

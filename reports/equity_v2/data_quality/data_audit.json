@@ -1,0 +1,49 @@
+{
+  "status": "DATA_GATE_NOT_HISTORICAL_PIT",
+  "source": "output/equities_2026-09-20_sip_r2",
+  "feed": "sip",
+  "requested_equity_candidates": 503,
+  "eligible_stocks": 499,
+  "selected_stocks": 400,
+  "snapshot_available_at": "2026-09-20T07:00:27.670424+00:00",
+  "last_bar_session": "2026-09-18",
+  "calendar_sessions": 2441,
+  "checks": {
+    "raw": {
+      "rows": 1161734,
+      "symbols": 504,
+      "invalid_ohlcv": 0,
+      "duplicate_rows": 0,
+      "outside_requested_calendar": 0,
+      "zero_volume": 5446
+    },
+    "all": {
+      "rows": 1161734,
+      "symbols": 504,
+      "invalid_ohlcv": 0,
+      "duplicate_rows": 0,
+      "outside_requested_calendar": 0,
+      "zero_volume": 5446
+    }
+  },
+  "unmatched_raw_adjusted_rows": 0,
+  "large_adjusted_returns": 122,
+  "files": {
+    "bars_raw.csv": {
+      "sha256": "b25e4997afe224338c5b78e8179ae7c384a4ad330b3edb7047d0f7f5fd26f37d",
+      "bytes": 88406584
+    },
+    "bars_all.csv": {
+      "sha256": "7d6a10505c6190768e796e11b45e5fa6fbfe3daddb0551bdf9f646c7a0d92d48",
+      "bytes": 83862746
+    }
+  },
+  "approved_orders": 0,
+  "blocking_gates": [
+    "Historical membership publication times unverified",
+    "Delisted security prices and terminal proceeds not reconciled",
+    "Historical identifier lineage and sector vintages unverified",
+    "Suspension events and live borrow checks incomplete",
+    "No accepted walk-forward/OOS evidence or prospective paper history"
+  ]
+}

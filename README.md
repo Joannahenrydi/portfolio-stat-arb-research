@@ -1,21 +1,27 @@
 # Portfolio Statistical Arbitrage Research
 
-Daily US ETF statistical-arbitrage research with residual reversal, Kalman relative-value and volume-dislocation signals, market/group neutralization, portfolio constraints, transaction costs and temporal validation.
+Daily US equity statistical-arbitrage research with 356 continuously observed stocks from a liquid 400-stock current cohort, residual/Kalman/price-path alphas, market/sector neutralization, portfolio constraints, transaction costs and temporal validation.
 
 **Current decision: REJECTED — approved allocation remains cash. No orders submitted.** This project records failed hypotheses rather than claiming deployable alpha.
 
-## Latest research
+## Latest equity research
 
-23 ETF/benchmark symbols were collected from Yahoo and authenticated Alpaca IEX through September 18, 2026. Three alpha families and their fixed equal-weight blend were evaluated with rolling historical parameter estimates, train/validation/audit time splits and seven stress scenarios.
+Alpaca SIP raw and adjusted daily bars were collected through September 18, 2026 for 503 current candidates plus SPY. A liquid 400-name screen and a 356-name continuous-history research cohort were evaluated across 111 frozen candidates. The cohort is explicitly survivor-biased at the user's direction.
 
-| Fixed blend, net return | Validation 2023–2024 | Temporal audit 2025–2026 |
-|---|---:|---:|
-| Yahoo | -9.67% | -7.75% |
-| Alpaca IEX | -2.08% | +1.85% |
+| Locked v2 winner, net | Train 2018–2022 | Validation 2023–2024 | Reused audit 2025–2026 |
+|---|---:|---:|---:|
+| CAGR | -1.82% | +0.37% | +6.07% |
+| Sharpe | -0.30 | 0.11 | 0.83 |
 
-Neither source passed the predefined acceptance criteria. The audit interval was previously inspected in the predecessor project and is **not pristine blind OOS**. IEX history is incomplete and volume represents one exchange. Costs and fills are proxies, not observed execution.
+The strategy failed the development gates. The audit interval is **not pristine blind OOS**. Costs and fills remain modeled rather than observed execution.
 
-- [Research report](reports/portfolio_2026-09-20/REPORT.md)
+- [12-week equity execution report](reports/equity_final/REPORT.md)
+- [Equity data audit](reports/equity_v2/data_quality/DATA_STATUS.md)
+- [v2 frozen protocol](docs/EQUITY_RESEARCH_PROTOCOL.md)
+- [v2 backtest](reports/equity_v2/backtest/evaluation.json)
+- [Kill tests](reports/equity_v2/robustness/kill_tests.csv)
+- [Promotion decision](reports/equity_final/promotion_decision.json)
+- [Legacy ETF research report](reports/portfolio_2026-09-20/REPORT.md)
 - [Alpaca cross-check](reports/portfolio_2026-09-20/alpaca_iex/REPORT.md)
 - [Coverage and source discrepancies](reports/portfolio_2026-09-20/DATA_AUDIT.md)
 - [Frozen protocol](research_protocol.md)
@@ -26,31 +32,33 @@ Neither source passed the predefined acceptance criteria. The audit interval was
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -e '.[data,dev]'
-python scripts/collect_portfolio_data.py --provider yahoo
-python scripts/evaluate_portfolio.py
+pip install -e '.[alpaca,data,dev]'
+python scripts/audit_equity_snapshot.py
+python scripts/evaluate_equity_v2.py
+python scripts/evaluate_equity_v3.py
+python scripts/evaluate_equity_v4.py
+python scripts/robustness_equity_v2.py
+python scripts/generate_shadow_paper.py
 pytest
 ```
 
-For Alpaca, set `APCA_API_KEY_ID` and `APCA_API_SECRET_KEY` in your local process environment, then use:
+For a new Alpaca collection, set `APCA_API_KEY_ID` and `APCA_API_SECRET_KEY` in your local process environment. Never put credentials in a file or commit. Collection scripts default to new local output directories; existing audited snapshots should remain immutable.
 
-```bash
-python scripts/collect_portfolio_data.py --provider alpaca --feed iex --output output/portfolio_v1/alpaca_data
-python scripts/evaluate_portfolio.py --data output/portfolio_v1/alpaca_data --output reports/portfolio_2026-09-20/alpaca_iex
-```
-
-Credentials, raw vendor data and derived price panels are not committed. Download your own data to rerun the pipeline. Included reports contain aggregate research results, positions, attribution and source-quality diagnostics; hashes identify the original local snapshots.
+Credentials, raw vendor data and derived price panels are not committed. Included reports contain aggregate research results, positions, diagnostics and input hashes.
 
 ## Structure
 
-- `src/pairs_trading/portfolio_research.py`: features, portfolio construction, costs and validation.
+- `src/pairs_trading/equity_alphas.py`: causal residual, Kalman and dislocation features.
+- `src/pairs_trading/equity_backtest.py`: fast neutral targets, weight drift and cost accounting.
+- `src/pairs_trading/equity_portfolio.py`: labeled constrained optimizer and cost estimator.
+- `src/pairs_trading/pit_universe.py`: bitemporal universe evidence and data gates.
 - `src/pairs_trading/`: retained predecessor data adapters and pair research modules.
-- `scripts/`: data collection and research entry points.
+- `scripts/`: SIP collection, audit, frozen research rounds, kill tests and shadow paper.
 - `tests/`: offline tests for no-look-ahead, neutrality, costs, accounting and existing pair components.
 - `config/`: frozen ETF universe and settings.
 - `reports/`: research outputs and explicit rejection decisions.
 
-The package namespace remains `pairs_trading` for compatibility with retained components. The inherited paper broker is not connected to the new portfolio pipeline; portfolio paper output is shadow targets only.
+The package namespace remains `pairs_trading` for compatibility with retained components. Portfolio paper output is shadow-only while the promotion decision is rejected.
 
 ## Remaining work
 

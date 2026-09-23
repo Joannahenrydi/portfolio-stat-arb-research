@@ -1,0 +1,14 @@
+{
+  "status": "BLOCKED",
+  "reasons": [
+    "PROMOTION_DECISION_REJECTED",
+    "MARKET_DATA_STALE"
+  ],
+  "last_bar_session": "2026-09-18",
+  "data_age_calendar_days": 5,
+  "theoretical_gross": 0.9879547068275378,
+  "approved_gross": 0.0,
+  "submitted_orders": 0,
+  "fills": 0,
+  "failed_orders": 0
+}
