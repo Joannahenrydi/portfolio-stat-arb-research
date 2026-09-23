@@ -172,7 +172,8 @@ def strict_neutral_target(
     names = index[usable]
     outside = index[~usable]
     if previous.loc[outside].abs().sum() > config.neutrality_tolerance:
-        raise StrictNeutralityError("HELD_NAME_BECAME_INELIGIBLE")
+        held_outside = list(outside[previous.loc[outside].abs() > config.neutrality_tolerance])
+        raise StrictNeutralityError(f"HELD_NAME_BECAME_INELIGIBLE:{held_outside[:5]}")
     if len(names) < 50:
         if previous.abs().sum() <= config.neutrality_tolerance:
             return previous.copy(), {"reason": "NO_SIGNAL", "gross_scalar": gross_scalar}

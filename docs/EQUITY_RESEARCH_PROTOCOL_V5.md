@@ -9,6 +9,11 @@ freeze and must be accumulated prospectively.
 
 - Universe and prices: the same 356-name `research_snapshot_only` cohort used by v2.
   Results remain subject to current-membership, complete-history and current-sector bias.
+- Before any candidate run, exclude a security if the train segment contains 20 or more
+  consecutive sessions of zero/missing raw volume. This train-only integrity rule removes
+  `COR`, `DOW` and `SNDK`, whose current tickers are not a tradable continuous historical
+  lineage in the Alpaca snapshot, leaving 353 names. A new 20-session stale episode in
+  validation invalidates the run rather than being learned as a strategy parameter.
 - Train: 2018-01-02 through 2022-12-30. Train-only quantities include residual-volatility
   distributions, dispersion terciles, alpha IC/correlation filters and ensemble weights.
 - Validation: 2023-01-03 through 2024-12-31. It may rank the frozen candidates but cannot
