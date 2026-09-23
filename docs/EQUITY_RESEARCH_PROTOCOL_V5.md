@@ -29,7 +29,10 @@ correction plus movement toward the desired target must satisfy 25% turnover, 1%
 name and 10 bps of ADV. If no strictly neutral target is executable, that candidate run is
 invalid. It cannot retain a partially neutral target and claim success.
 
-Default gross is 1.0. Costs remain 0.5 bp commission, 2 bp half spread, 1 bp slippage,
+Hard gross and single-name limits remain 1.0 and 1%. Desired targets use a fixed 95%
+execution buffer (0.95 gross and 0.95% per name) so five-session mark-to-market drift
+does not make the next strict-neutral rebalance mechanically infeasible. This buffer is
+shared by every E01–E14 candidate and is not a tuning dimension. Costs remain 0.5 bp commission, 2 bp half spread, 1 bp slippage,
 square-root impact coefficient 0.10 and 3% annual short borrow. The common borrow rate is
 charged but cannot rank short candidates. Historical name-level borrow and hard-to-borrow
 data are unavailable, so no proxy may be presented as observed borrow.
