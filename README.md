@@ -1,4 +1,4 @@
-# US Equity Market-Neutral Portfolio Research
+# US Equity Market-Neutral Portfolio Strategy
 
 这是一个**股票组合统计套利平台**。主策略是美股日频横截面 residual mean reversion，
 Kalman dynamic residual 和量价/波动错位作为并行 alpha family；系统在组合层统一做净敞口、
