@@ -36,7 +36,6 @@ cohort 为 356 只。当前最好的冻结候选仍未通过：
 无幸存者偏差。2025–2026 区间也已被反复查看，不再是 pristine blind OOS。
 
 - [12 周执行报告](reports/equity_final/REPORT.md)
-- [下一轮冻结研究协议](research_protocol.md)
 - [数据审计](reports/equity_v2/data_quality/DATA_STATUS.md)
 - [回测结果](reports/equity_v2/backtest/evaluation.json)
 - [Kill tests](reports/equity_v2/robustness/kill_tests.csv)
