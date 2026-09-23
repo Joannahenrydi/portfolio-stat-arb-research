@@ -48,6 +48,7 @@ cohort 为 356 只。当前最好的冻结候选仍未通过：
 - [Kill tests](reports/equity_v2/robustness/kill_tests.csv)
 - [晋级决策](reports/equity_final/promotion_decision.json)
 - [成本感知优化目标](reports/equity_final/optimized_portfolio/optimized_target.json)
+- [组合诊断图](reports/equity_final/diagnostics/README.md)
 
 ## 目录
 

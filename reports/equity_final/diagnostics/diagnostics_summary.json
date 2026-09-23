@@ -1,0 +1,373 @@
+{
+  "candidate": "momentum_252_skip_21",
+  "data_scope": "research_snapshot_only",
+  "pit_verified": false,
+  "ic_horizon": "next_session_total_return",
+  "average_completed_holding_period_sessions": 94.5740045078888,
+  "dispersion_training_tertiles": {
+    "low": 0.012327698317429133,
+    "high": 0.01573751733996562
+  },
+  "annual": [
+    {
+      "year": 2018,
+      "gross_sharpe": 0.3460045083444284,
+      "net_sharpe": 0.10568955318035828,
+      "turnover": 3.776847966118897,
+      "transaction_cost_bps": 13.265456583556565,
+      "borrow_cost_bps": 55.25792114506744
+    },
+    {
+      "year": 2019,
+      "gross_sharpe": -0.41343714579509483,
+      "net_sharpe": -0.8019718631948487,
+      "turnover": 9.327310426253936,
+      "transaction_cost_bps": 32.76992982913542,
+      "borrow_cost_bps": 144.95608058990172
+    },
+    {
+      "year": 2020,
+      "gross_sharpe": 0.28215917585285716,
+      "net_sharpe": 0.0925543034122321,
+      "turnover": 9.807616932889886,
+      "transaction_cost_bps": 34.53389870786073,
+      "borrow_cost_bps": 150.40695572018817
+    },
+    {
+      "year": 2021,
+      "gross_sharpe": -0.29905085105966406,
+      "net_sharpe": -0.6950836271713676,
+      "turnover": 10.813036293916642,
+      "transaction_cost_bps": 37.97694450136095,
+      "borrow_cost_bps": 148.10603979670546
+    },
+    {
+      "year": 2022,
+      "gross_sharpe": -0.4012539878174994,
+      "net_sharpe": -0.8627894119631199,
+      "turnover": 0.930026870200912,
+      "transaction_cost_bps": 3.265386650472962,
+      "borrow_cost_bps": 140.49810821734485
+    },
+    {
+      "year": 2023,
+      "gross_sharpe": -0.46177244115508115,
+      "net_sharpe": -0.9552986866151131,
+      "turnover": 2.529365772518676,
+      "transaction_cost_bps": 8.881645774998603,
+      "borrow_cost_bps": 151.60870279118157
+    },
+    {
+      "year": 2024,
+      "gross_sharpe": 1.2478165763598439,
+      "net_sharpe": 0.8572945648751252,
+      "turnover": 8.726241403890647,
+      "transaction_cost_bps": 30.63066111904875,
+      "borrow_cost_bps": 151.29611621145995
+    },
+    {
+      "year": 2025,
+      "gross_sharpe": 0.928986833355127,
+      "net_sharpe": 0.6386973049886292,
+      "turnover": 8.534950183819099,
+      "transaction_cost_bps": 29.964470152977796,
+      "borrow_cost_bps": 150.0578018504952
+    },
+    {
+      "year": 2026,
+      "gross_sharpe": 1.242453983330676,
+      "net_sharpe": 1.0388692284094545,
+      "turnover": 6.232850582712211,
+      "transaction_cost_bps": 21.878085942550793,
+      "borrow_cost_bps": 106.82125450852953
+    }
+  ],
+  "ic_by_year": [
+    {
+      "year": 2018,
+      "Alpha IC": 0.012443720494797094,
+      "Rank IC": 0.0207963344284659
+    },
+    {
+      "year": 2019,
+      "Alpha IC": 0.004906434072777095,
+      "Rank IC": 0.007346249644007993
+    },
+    {
+      "year": 2020,
+      "Alpha IC": 0.02569430157997704,
+      "Rank IC": 0.02316308115931413
+    },
+    {
+      "year": 2021,
+      "Alpha IC": 0.0024964496373325856,
+      "Rank IC": 0.001173941429940667
+    },
+    {
+      "year": 2022,
+      "Alpha IC": 0.004210457582757013,
+      "Rank IC": 0.009504982812697776
+    },
+    {
+      "year": 2023,
+      "Alpha IC": 0.0013409119669677968,
+      "Rank IC": 0.007713392808917239
+    },
+    {
+      "year": 2024,
+      "Alpha IC": 0.02001504513981821,
+      "Rank IC": 0.023445273622102268
+    },
+    {
+      "year": 2025,
+      "Alpha IC": 0.013830109391019096,
+      "Rank IC": 0.024010687172647475
+    },
+    {
+      "year": 2026,
+      "Alpha IC": 0.037224096163385866,
+      "Rank IC": 0.025730956386258667
+    }
+  ],
+  "holding_period_by_start_year": [
+    {
+      "start_year": 2018,
+      "Mean holding period": 138.61607142857142
+    },
+    {
+      "start_year": 2019,
+      "Mean holding period": 81.83417085427136
+    },
+    {
+      "start_year": 2020,
+      "Mean holding period": 91.61228406909788
+    },
+    {
+      "start_year": 2021,
+      "Mean holding period": 140.42663476874003
+    },
+    {
+      "start_year": 2022,
+      "Mean holding period": 356.0919540229885
+    },
+    {
+      "start_year": 2023,
+      "Mean holding period": 143.63793103448276
+    },
+    {
+      "start_year": 2024,
+      "Mean holding period": 64.52309236947791
+    },
+    {
+      "start_year": 2025,
+      "Mean holding period": 43.46244131455399
+    },
+    {
+      "start_year": 2026,
+      "Mean holding period": 19.978586723768736
+    }
+  ],
+  "long_short_pnl_percent_by_year": [
+    {
+      "year": 2018,
+      "Long leg": -5.50507298625752,
+      "Short leg": 6.491957493490612
+    },
+    {
+      "year": 2019,
+      "Long leg": 16.39078940640955,
+      "Short leg": -18.27757855235985
+    },
+    {
+      "year": 2020,
+      "Long leg": 16.57081031468308,
+      "Short leg": -13.818238791074593
+    },
+    {
+      "year": 2021,
+      "Long leg": 13.732484411624313,
+      "Short leg": -15.137335451213247
+    },
+    {
+      "year": 2022,
+      "Long leg": -5.5961160444354725,
+      "Short leg": 4.345831761086317
+    },
+    {
+      "year": 2023,
+      "Long leg": 10.31123607710778,
+      "Short leg": -11.818284789506981
+    },
+    {
+      "year": 2024,
+      "Long leg": 13.050914533561139,
+      "Short leg": -7.220628760395149
+    },
+    {
+      "year": 2025,
+      "Long leg": 13.120060530121652,
+      "Short leg": -7.364005068175978
+    },
+    {
+      "year": 2026,
+      "Long leg": 10.559551625176791,
+      "Short leg": -2.725899160384159
+    }
+  ],
+  "sector_neutralization_by_year": [
+    {
+      "year": 2018,
+      "sector_before": 0.04223659303930327,
+      "sector_after": 0.0002405753667004329
+    },
+    {
+      "year": 2019,
+      "sector_before": 0.05226480530657394,
+      "sector_after": 1.4601886974201002e-05
+    },
+    {
+      "year": 2020,
+      "sector_before": 0.048694449305434026,
+      "sector_after": 0.00046043290522298537
+    },
+    {
+      "year": 2021,
+      "sector_before": 0.06930386740331491,
+      "sector_after": 0.0002978849075992395
+    },
+    {
+      "year": 2022,
+      "sector_before": 0.060941061835103866,
+      "sector_after": 0.02347776002658605
+    },
+    {
+      "year": 2023,
+      "sector_before": 0.05297779952067663,
+      "sector_after": 0.02752312912051662
+    },
+    {
+      "year": 2024,
+      "sector_before": 0.05907485646192178,
+      "sector_after": 5.755205552663115e-16
+    },
+    {
+      "year": 2025,
+      "sector_before": 0.047601665687130125,
+      "sector_after": 2.7112815926294703e-06
+    },
+    {
+      "year": 2026,
+      "sector_before": 0.10485783821370626,
+      "sector_after": 1.0714465339262125e-15
+    }
+  ],
+  "beta_neutralization_by_year": [
+    {
+      "year": 2018,
+      "beta_before": 0.031405478213975435,
+      "beta_after": 0.00011390821336575137
+    },
+    {
+      "year": 2019,
+      "beta_before": 0.06542936174880207,
+      "beta_after": 1.2801163444775172e-05
+    },
+    {
+      "year": 2020,
+      "beta_before": 0.08832164640502128,
+      "beta_after": 0.0004484306855932352
+    },
+    {
+      "year": 2021,
+      "beta_before": 0.09937962392973765,
+      "beta_after": 0.0003902522267606276
+    },
+    {
+      "year": 2022,
+      "beta_before": 0.04455962475636161,
+      "beta_after": 0.012268301167998485
+    },
+    {
+      "year": 2023,
+      "beta_before": 0.057195417640568416,
+      "beta_after": 0.013986957064603232
+    },
+    {
+      "year": 2024,
+      "beta_before": 0.03940339133391646,
+      "beta_after": 5.275600218117702e-16
+    },
+    {
+      "year": 2025,
+      "beta_before": 0.06475505650024271,
+      "beta_after": 1.3924917547275193e-06
+    },
+    {
+      "year": 2026,
+      "beta_before": 0.17764949189390392,
+      "beta_after": 1.0282449495032811e-15
+    }
+  ],
+  "residual_volatility_bucket": [
+    {
+      "bucket": "Q1",
+      "Annualized contribution": -0.08198573130865512
+    },
+    {
+      "bucket": "Q2",
+      "Annualized contribution": 0.46046421785087027
+    },
+    {
+      "bucket": "Q3",
+      "Annualized contribution": 0.1707791845553265
+    },
+    {
+      "bucket": "Q4",
+      "Annualized contribution": 0.44665601669098276
+    },
+    {
+      "bucket": "Q5",
+      "Annualized contribution": 0.9729630658477721
+    }
+  ],
+  "dispersion_regime": [
+    {
+      "regime": "Low",
+      "sessions": 622,
+      "net_sharpe": -0.2020629997705142,
+      "annualized_return": -0.00806095836817179
+    },
+    {
+      "regime": "Mid",
+      "sessions": 730,
+      "net_sharpe": 0.08484466917237994,
+      "annualized_return": 0.004002497568985319
+    },
+    {
+      "regime": "High",
+      "sessions": 838,
+      "net_sharpe": 0.15662095748198615,
+      "annualized_return": 0.011484095692051312
+    }
+  ],
+  "market_drawdown_regime": [
+    {
+      "regime": "Normal (> -5%)",
+      "sessions": 1441,
+      "net_sharpe": -0.07808332779353284,
+      "annualized_return": -0.004667501874430991
+    },
+    {
+      "regime": "Drawdown (-5% to -15%)",
+      "sessions": 543,
+      "net_sharpe": 0.7503413071029629,
+      "annualized_return": 0.040076897645029294
+    },
+    {
+      "regime": "Stress (\u2264 -15%)",
+      "sessions": 206,
+      "net_sharpe": -0.8095283716143665,
+      "annualized_return": -0.036428669465536
+    }
+  ]
+}
