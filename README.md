@@ -2,7 +2,6 @@
 
 Daily US equity statistical-arbitrage research with 356 continuously observed stocks from a liquid 400-stock current cohort, residual/Kalman/price-path alphas, market/sector neutralization, portfolio constraints, transaction costs and temporal validation.
 
-**Current decision: REJECTED — approved allocation remains cash. No orders submitted.** This project records failed hypotheses rather than claiming deployable alpha.
 
 ## Latest equity research
 
