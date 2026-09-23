@@ -66,7 +66,7 @@ pytest -q
 ruff check data features models portfolio execution risk backtest live scripts tests
 ```
 
-Week 1 新数据采集：
+数据采集：
 
 ```bash
 export APCA_API_KEY_ID="..."
@@ -75,9 +75,6 @@ python scripts/collect_week1_alpaca.py \
   --output output/week1-$(date +%Y%m%d) \
   --feed sip --start 2017-01-01 --end 2026-09-19
 ```
-
-密钥、vendor raw data 和派生价格 panel 不提交 Git。采集器保存 request ID、响应哈希、抓取时间和
-明确的 `prospective_only` provenance；它不会用今天的状态伪造过去可获得的信息。
 
 复现已冻结的研究和 shadow 输出：
 
