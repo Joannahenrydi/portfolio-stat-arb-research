@@ -59,10 +59,6 @@ Credentials, raw vendor data and derived price panels are not committed. Include
 
 The package namespace remains `pairs_trading` for compatibility with retained components. Portfolio paper output is shadow-only while the promotion decision is rejected.
 
-## Remaining work
-
-A 200–500-stock PIT security master, historical market-cap/sector data, delisting and corporate-action reconciliation, calibrated return/covariance optimization, actual borrow/spread checks and broker fill reconciliation are not complete. Historical analysis does not replace 2–3 months of prospective paper observation.
-
 ## Origin and license
 
 Extracted from [kalman-pairs-trading](https://github.com/Joannahenrydi/kalman-pairs-trading), preserving its Python namespace and pair-model tests. MIT license for code; market data remains subject to provider terms.
