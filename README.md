@@ -4,23 +4,6 @@
 Kalman dynamic residual 和量价/波动错位作为并行 alpha family；系统在组合层统一做净敞口、
 市场 beta、行业与可选风格因子中性化，然后进行协方差与成本感知的权重优化。
 
-## Pipeline
-
-```text
-Market Data -> PIT Universe -> Features/Alpha -> Neutralization
-            -> Portfolio Optimization -> Cost/Risk -> Walk-Forward Backtest
-            -> Promotion Gate -> Alpaca Paper Execution -> PnL Attribution
-```
-
-组合目标为：
-
-```text
-maximize  alpha' w - lambda * w' Sigma w - transaction_cost(w - w_previous)
-```
-
-约束包括 gross、net、market beta、sector、single-name、turnover 和 ADV participation。
-优化器对 200–500 只股票使用协方差感知的中性子空间解与精确成本 line search，避免逐笔阈值下单。
-
 ## 已完成的历史研究
 
 Alpaca SIP raw/all-adjusted 日线覆盖 503 只当前候选和 SPY；流动性筛选 400 只，连续历史研究
