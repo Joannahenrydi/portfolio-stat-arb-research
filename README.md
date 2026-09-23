@@ -4,9 +4,6 @@
 Kalman dynamic residual 和量价/波动错位作为并行 alpha family；系统在组合层统一做净敞口、
 市场 beta、行业与可选风格因子中性化，然后进行协方差与成本感知的权重优化。
 
-**当前研究决策：REJECTED。** 已研究的 111 个候选没有通过冻结的训练、验证与成本压力门槛，
-因此 `orders_allowed=false`，批准仓位为零。系统允许 alpha 被拒绝，不会为追求好看的曲线而改门槛。
-
 ## Pipeline
 
 ```text
