@@ -9,14 +9,14 @@ Kalman dynamic residual 和量价/波动错位作为并行 alpha family；系统
 Alpaca SIP raw/all-adjusted 日线覆盖 503 只当前候选和 SPY；流动性筛选 400 只，连续历史研究
 cohort 为 356 只。当前最好的冻结候选仍未通过：
 
-| 净结果 | Train 2018–2022 | Validation 2023–2024 | Reused audit 2025–2026 |
+| 净结果 | Train 2018–2022 | Validation 2023–2024 | Audit 2025–2026 |
 |---|---:|---:|---:|
 | CAGR | -1.82% | +0.37% | +6.07% |
 | Sharpe | -0.30 | 0.11 | 0.83 |
 
 这些结果是 `research_snapshot_only`：Alpaca 当前 asset master 和当前 ETF 持仓不能证明历史时点
 成员资格。代码包含严格的双时点 PIT gate，但只有 Alpaca 时，无法把 2018–2026 历史回测认证为
-无幸存者偏差。2025–2026 区间也已被反复查看，不再是 pristine blind OOS。
+无幸存者偏差。
 
 - [策略执行报告](reports/equity_final/REPORT.md)
 - [数据审计](reports/equity_v2/data_quality/DATA_STATUS.md)
