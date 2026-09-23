@@ -1,0 +1,5 @@
+family,train_mean_rank_ic_5d,max_admitted_ic_correlation,qualified
+baseline_momentum,0.0065332855071607715,0.0,True
+residual_reversal,0.011512662668957566,0.16746193147861316,True
+kalman_innovation,0.008593893533447914,0.5376082757146807,True
+volume_volatility_dislocation,0.00890277498147729,0.9267456775856819,False

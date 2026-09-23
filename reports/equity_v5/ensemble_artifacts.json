@@ -1,0 +1,26 @@
+{
+  "status": "AVAILABLE",
+  "admitted_families": [
+    "baseline_momentum",
+    "residual_reversal",
+    "kalman_innovation"
+  ],
+  "equal_risk_weights": {
+    "baseline_momentum": 0.24956574327799536,
+    "residual_reversal": 0.38030635022150705,
+    "kalman_innovation": 0.3701279065004975
+  },
+  "ridge_families": [
+    "baseline_momentum",
+    "kalman_innovation",
+    "residual_reversal"
+  ],
+  "ridge_coefficients": [
+    -0.00014834652680534316,
+    0.00018118559771730514,
+    0.0003741837235353739
+  ],
+  "ridge_intercept": 0.0032886822093690857,
+  "training_digest": "7387b821321126c53094c73b16f09fd0c06730fc1d8b4b38e41c8f5263e5cb00",
+  "latest_training_label": "2022-12-30"
+}

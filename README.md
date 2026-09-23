@@ -25,6 +25,7 @@ cohort 为 356 只。当前最好的冻结候选仍未通过：
 - [晋级决策](reports/equity_final/promotion_decision.json)
 - [成本感知优化目标](reports/equity_final/optimized_portfolio/optimized_target.json)
 - [组合诊断图](reports/equity_final/diagnostics/README.md)
+- [v5 Conditional Market-Neutral 实验报告](reports/equity_v5/REPORT.md)
 
 ## 目录
 

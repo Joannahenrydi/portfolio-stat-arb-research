@@ -1,0 +1,22 @@
+{
+  "protocol_sha256": "ab66b5fc69bcec8345fb74ca56e4d0e1ae8ba137cc7acb3bc9c0ddeb5d85445f",
+  "cohort_size": 341,
+  "selection": {
+    "status": "REJECTED",
+    "reason": "NO_V5_CANDIDATE_PASSED_FROZEN_DEVELOPMENT_GATES",
+    "selected_before_reused_audit": null,
+    "reused_audit_evaluated": false,
+    "selection_sha256": "5cef8c58dcc73483e1fddfb84922d7e6fa4ccf49dc15142b912ac01685752af4"
+  },
+  "reused_audit": null,
+  "ensemble_status": "AVAILABLE",
+  "borrow_aware_ranking": "BLOCKED_MISSING_PIT_BORROW_DATA",
+  "prospective_shadow": {
+    "prospective_start": "2026-09-24",
+    "status": "BLOCKED_PENDING_FRESH_DATA_AND_ACCEPTED_V5",
+    "orders_allowed": false,
+    "last_available_bar": "2026-09-18",
+    "credentials_configured_in_run": false,
+    "historical_rows_count_as_prospective": false
+  }
+}

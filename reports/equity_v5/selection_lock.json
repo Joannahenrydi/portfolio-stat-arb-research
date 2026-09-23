@@ -1,0 +1,7 @@
+{
+  "status": "REJECTED",
+  "reason": "NO_V5_CANDIDATE_PASSED_FROZEN_DEVELOPMENT_GATES",
+  "selected_before_reused_audit": null,
+  "reused_audit_evaluated": false,
+  "selection_sha256": "5cef8c58dcc73483e1fddfb84922d7e6fa4ccf49dc15142b912ac01685752af4"
+}
