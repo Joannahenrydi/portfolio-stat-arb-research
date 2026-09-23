@@ -304,18 +304,18 @@ def main(source: Path, v2_output: Path, output: Path) -> None:
         percentiles = signal.rank(axis=1, pct=True)
         for segment_name, (start, end) in (("train", TRAIN), ("development", VALIDATION)):
             completed = label_end.le(end)
-            segment = signal.index.to_series().between(start, end) & completed
-            linear = daily_ic(signal.where(segment, axis=0), labels.where(segment, axis=0), "pearson")
-            rank = daily_ic(signal.where(segment, axis=0), labels.where(segment, axis=0), "spearman")
-            long_mask = percentiles.gt(0.5)
-            short_mask = percentiles.le(0.5)
+            segment_signal = signal.where(completed).loc[start:end]
+            segment_label = labels.where(completed).loc[start:end]
+            segment_percentiles = percentiles.loc[start:end]
+            linear = daily_ic(segment_signal, segment_label, "pearson")
+            rank = daily_ic(segment_signal, segment_label, "spearman")
+            long_mask = segment_percentiles.gt(0.5)
+            short_mask = segment_percentiles.le(0.5)
             long_ic = daily_ic(
-                signal.where(long_mask & segment.to_numpy()[:, None]),
-                labels.where(long_mask & segment.to_numpy()[:, None]), "spearman"
+                segment_signal.where(long_mask), segment_label.where(long_mask), "spearman"
             )
             short_ic = daily_ic(
-                signal.where(short_mask & segment.to_numpy()[:, None]),
-                labels.where(short_mask & segment.to_numpy()[:, None]), "spearman"
+                segment_signal.where(short_mask), segment_label.where(short_mask), "spearman"
             )
             diagnostic_rows.append(
                 {"horizon": horizon, "segment": segment_name,
