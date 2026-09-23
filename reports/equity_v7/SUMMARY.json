@@ -1,0 +1,25 @@
+{
+  "protocol_sha256": "984d6ddc1a392ce8777c35b2eaf314cae40981e7f24b572a9c58b5474c7f9992",
+  "data_label": "research_snapshot_only",
+  "cohort_size": 341,
+  "selection": {
+    "status": "REJECTED",
+    "reason": "NO_V7_CANDIDATE_PASSED_FROZEN_PROFITABILITY_GATES",
+    "selected_before_reused_audit": null,
+    "reused_audit_evaluated": false,
+    "selection_sha256": "54b13f3ffce6187d89366a5270ad6c9ba1d4dfbe48c0ffdc6c2ec03c95023df2"
+  },
+  "kill_tests": {
+    "status": "NOT_RUN_NO_SELECTED_CANDIDATE"
+  },
+  "reused_audit": null,
+  "earnings_filter": "BLOCKED_MISSING_PIT_EARNINGS_CALENDAR",
+  "borrow_aware_ranking": "BLOCKED_MISSING_PIT_BORROW_DATA",
+  "prospective_shadow": {
+    "prospective_start": "2026-09-24",
+    "status": "BLOCKED_PENDING_FRESH_DATA_AND_ACCEPTED_V7",
+    "orders_allowed": false,
+    "last_available_bar": "2026-09-18",
+    "historical_rows_count_as_prospective": false
+  }
+}

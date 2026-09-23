@@ -1,0 +1,7 @@
+{
+  "status": "REJECTED",
+  "reason": "NO_V7_CANDIDATE_PASSED_FROZEN_PROFITABILITY_GATES",
+  "selected_before_reused_audit": null,
+  "reused_audit_evaluated": false,
+  "selection_sha256": "54b13f3ffce6187d89366a5270ad6c9ba1d4dfbe48c0ffdc6c2ec03c95023df2"
+}

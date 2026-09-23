@@ -281,7 +281,10 @@ def run_residual_reversal_backtest(
     costs = costs or PortfolioCosts()
     columns = returns.columns
     wide = (score, beta, raw_close, raw_volume, adv, residual_volatility, eligibility)
-    if any(not frame.index.equals(returns.index) or not frame.columns.equals(columns) for frame in wide):
+    if any(
+        not frame.index.equals(returns.index) or not frame.columns.equals(columns)
+        for frame in wide
+    ):
         raise ValueError("all wide inputs must share sessions and symbols")
     if not sectors.index.equals(columns) or not prior_market_volatility.index.equals(returns.index):
         raise ValueError("sector or market-volatility input is misaligned")
@@ -333,7 +336,9 @@ def run_residual_reversal_backtest(
         if offset % config.rebalance_every == 0:
             try:
                 scalar = (
-                    stress_gross_scalar(float(prior_market_volatility.loc[session]), stress_artifact)
+                    stress_gross_scalar(
+                        float(prior_market_volatility.loc[session]), stress_artifact
+                    )
                     if config.stress_scaler else 1.0
                 )
                 target, metrics = strict_liquid_target(

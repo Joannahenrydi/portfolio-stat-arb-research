@@ -83,6 +83,8 @@ def load_panels(source: Path, v2_output: Path, end: pd.Timestamp) -> tuple[dict,
     )
     residual_volatility = features.residual.rolling(60, min_periods=60).std().shift(1)
     prior_market_volatility = market.rolling(20, min_periods=20).std().shift(1) * np.sqrt(252)
+    prior_dispersion = features.residual.std(axis=1).shift(1)
+    prior_drawdown = adjusted.SPY.div(adjusted.SPY.cummax()).sub(1).shift(1)
     scores = build_v7_scores(features.residual, eligibility)
     panels = {
         "returns": returns,
@@ -95,6 +97,8 @@ def load_panels(source: Path, v2_output: Path, end: pd.Timestamp) -> tuple[dict,
         "residual_volatility": residual_volatility,
         "eligibility": eligibility,
         "prior_market_volatility": prior_market_volatility,
+        "prior_dispersion": prior_dispersion,
+        "prior_drawdown": prior_drawdown,
         "scores": scores,
         "symbols": symbols,
     }
@@ -351,7 +355,10 @@ def main(source: Path, v2_output: Path, output: Path) -> None:
         }
         tests = [
             ("base", selected_score, selected_config, panels, costs),
-            ("double_cost", selected_score, selected_config, panels, replace(costs, multiplier=2.0)),
+            (
+                "double_cost", selected_score, selected_config, panels,
+                replace(costs, multiplier=2.0),
+            ),
             ("signal_delay_1", selected_score.shift(1), selected_config, panels, costs),
         ]
         for interval in (2, 3, 5):
@@ -385,6 +392,29 @@ def main(source: Path, v2_output: Path, output: Path) -> None:
             "kill_tests_sha256": sha256(output / "kill_tests.csv"),
         }
     (output / "kill_test_lock.json").write_text(json.dumps(kill_lock, indent=2) + "\n")
+
+    if selected_name is not None and kill_lock["status"] == "PASSED":
+        # This is deliberately after both locks are durable. The audit cannot change
+        # selection, and it remains descriptive because earlier work already exposed it.
+        audit_panels, _ = load_panels(source, v2_output, AUDIT[1])
+        audit_artifact = fit_stress_artifact(audit_panels["prior_market_volatility"], *TRAIN)
+        selected_config = specifications[selected_name][1]
+        full = run_candidate(
+            audit_panels["scores"]["core"], selected_config, audit_panels,
+            audit_artifact, costs, AUDIT[1]
+        )
+        reused_audit = segment_metrics(full, audit_panels["beta"], *AUDIT)
+        (output / "reused_audit.json").write_text(
+            json.dumps(
+                {
+                    "candidate": selected_name,
+                    "status": "REUSED_AUDIT_DESCRIPTIVE_ONLY",
+                    "metrics": reused_audit,
+                },
+                indent=2,
+            )
+            + "\n"
+        )
 
     prospective = {
         "prospective_start": "2026-09-24",
