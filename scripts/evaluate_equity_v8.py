@@ -194,6 +194,8 @@ def main(source: Path, v2_output: Path, output: Path) -> None:
         train = segment_metrics(result, benchmark, *TRAIN)
         development = segment_metrics(result, benchmark, *VALIDATION)
         completed = result.status == "COMPLETED"
+        result.daily.to_csv(output / f"{name}_daily.csv")
+        result.refits.to_csv(output / f"{name}_refits.csv")
         eligible = completed and name != "S00" and (
             train["sharpe"] > 0.70
             and development["sharpe"] > 0.50
@@ -217,8 +219,6 @@ def main(source: Path, v2_output: Path, output: Path) -> None:
             row["worst_development_year"] = min(
                 train["worst_calendar_year_return"], development["worst_calendar_year_return"]
             )
-            result.daily.to_csv(output / f"{name}_daily.csv")
-            result.refits.to_csv(output / f"{name}_refits.csv")
         rows.append(row)
 
     selection = pd.DataFrame(rows)

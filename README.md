@@ -27,6 +27,7 @@ cohort 为 356 只。当前最好的冻结候选仍未通过：
 - [组合诊断图](reports/equity_final/diagnostics/README.md)
 - [v5 Conditional Market-Neutral 实验报告](reports/equity_v5/REPORT.md)
 - [v7 Residual Short-Horizon Alpha Discovery 报告](reports/equity_v7/REPORT.md)
+- [v8 论文目标函数策略袖套分配报告](reports/equity_v8/REPORT.md)
 
 ## 目录
 

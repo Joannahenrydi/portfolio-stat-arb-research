@@ -1,0 +1,3 @@
+experiment,delta_return_vs_S00,delta_volatility_vs_S00,delta_correlation_vs_S00,delta_drawdown_vs_S00,delta_turnover_vs_S00
+S00,0.0,0.0,0.0,0.0,0.0
+S07,-0.001115946190401118,-0.0004925806299406733,0.001846923487420448,-0.00215784332140867,1.2832113257251487

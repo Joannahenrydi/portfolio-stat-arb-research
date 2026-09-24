@@ -318,7 +318,8 @@ def run_sleeve_allocation(
         except (SleeveAllocationError, ValueError) as exc:
             return SleeveAllocationResult(
                 pd.DataFrame(records).set_index("session"), pd.DataFrame(weights),
-                pd.DataFrame(refits), "INVALID", str(exc), evaluation_start
+                pd.DataFrame(refits), "INVALID",
+                f"{exc}:DECISION_SESSION={session.date()}", evaluation_start,
             )
         if implementation_delay_sessions:
             if queued is not None:

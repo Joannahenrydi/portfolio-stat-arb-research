@@ -1,0 +1,23 @@
+{
+  "protocol_sha256": "7065429d5049587eb98385f106a87a49026720e57d6ff7819cb789735dca8c42",
+  "paper_objective": "MINIMIZE_ABSOLUTE_PORTFOLIO_MARKET_CORRELATION",
+  "data_label": "research_snapshot_only",
+  "selection": {
+    "status": "REJECTED",
+    "reason": "NO_V8_CANDIDATE_PASSED_FROZEN_PROFITABILITY_GATES",
+    "selected_before_reused_audit": null,
+    "reused_audit_evaluated": false,
+    "selection_sha256": "6040b05dc4fbdeab41009fef5ea6eef30b98deb508ad22318ff5506f3212e4d8"
+  },
+  "kill_tests": {
+    "status": "NOT_RUN_NO_SELECTED_CANDIDATE"
+  },
+  "reused_audit": null,
+  "prospective_shadow": {
+    "prospective_start": "2026-09-24",
+    "status": "BLOCKED_PENDING_FRESH_DATA_AND_ACCEPTED_V8",
+    "orders_allowed": false,
+    "last_available_bar": "2026-09-18",
+    "historical_rows_count_as_prospective": false
+  }
+}

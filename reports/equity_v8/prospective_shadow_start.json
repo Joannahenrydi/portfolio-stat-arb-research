@@ -1,0 +1,7 @@
+{
+  "prospective_start": "2026-09-24",
+  "status": "BLOCKED_PENDING_FRESH_DATA_AND_ACCEPTED_V8",
+  "orders_allowed": false,
+  "last_available_bar": "2026-09-18",
+  "historical_rows_count_as_prospective": false
+}
