@@ -154,6 +154,10 @@ signal delay, confidence multiplier +/-20%, removal of a deterministic 20% of na
 of the top 5% development PnL contributors, and rebalances of 2 and 5 sessions. Any failure
 rejects v9. Only after both locks are written may reused-audit data be loaded.
 
+The confidence-multiplier perturbations apply only to cost-filtered K05-K08. If K01-K04 is
+selected, those two rows are recorded as `NOT_APPLICABLE`; they are excluded from the kill-test
+conjunction rather than treated as evidence for or against the unfiltered specification.
+
 Mandatory outputs include family IC/ICIR and correlation matrices, adaptive Q/R distributions,
 calibration slope, pass rate and realized edge/cost ratio by year, gross/net performance,
 turnover, long/short PnL, exposure checks, residual-volatility buckets and market regimes.

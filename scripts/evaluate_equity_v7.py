@@ -88,6 +88,7 @@ def load_panels(source: Path, v2_output: Path, end: pd.Timestamp) -> tuple[dict,
     scores = build_v7_scores(features.residual, eligibility)
     panels = {
         "returns": returns,
+        "market": market,
         "beta": features.market_beta_prior,
         "sectors": sectors,
         "raw_close": raw_close,
