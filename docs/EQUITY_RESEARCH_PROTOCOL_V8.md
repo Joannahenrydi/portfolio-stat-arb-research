@@ -58,6 +58,10 @@ distance between the drifted and new weights. It is capped at 0.60 and charged a
 5 bps per unit of allocation turnover, on top of costs already present inside sleeve net
 returns. Cross-sleeve stock-level netting is not credited.
 
+The first allocation from cash necessarily has L1 turnover equal to 1. It is treated as initial
+funding and is exempt from the 0.60 *reallocation* cap, but the full 5 bps funding cost is
+charged. Every later allocation change is subject to the 0.60 cap.
+
 For fit-window sleeve return matrix `X`, benchmark return vector `m`, and allocation `a`, the
 paper objective is:
 
