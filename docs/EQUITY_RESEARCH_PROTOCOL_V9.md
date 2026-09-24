@@ -87,6 +87,10 @@ cross-sectionally demeaned. A zero-intercept ridge slope with penalty `1e-6` map
 expected three-session residual return. A nonpositive slope blocks cost-filtered candidates;
 the sign may not be flipped after seeing development results.
 
+Every cost-filtered blend, including the two-family K08 blend, receives its own calibration
+using the identical train-only procedure. A calibration artifact may never be reused across
+different blend definitions.
+
 For each name, the frozen round-trip hurdle is:
 
 ```text
