@@ -89,6 +89,8 @@ def load_panels(source: Path, v2_output: Path, end: pd.Timestamp) -> tuple[dict,
     panels = {
         "returns": returns,
         "market": market,
+        "feature_signals": features.signals,
+        "volatility_prior": features.volatility_prior,
         "beta": features.market_beta_prior,
         "sectors": sectors,
         "raw_close": raw_close,
