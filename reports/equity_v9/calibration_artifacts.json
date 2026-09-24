@@ -1,0 +1,18 @@
+{
+  "four_family": {
+    "slope": 0.0006074592392288344,
+    "penalty": 1e-06,
+    "observations": 298232,
+    "train_start": "2018-01-02",
+    "train_end": "2022-12-30",
+    "digest": "b5f8be67992f2e9e3ca1aa747ad8e9d0af02a787d48df4852c2f00c7432cfc26"
+  },
+  "two_family": {
+    "slope": 0.0003521120252397953,
+    "penalty": 1e-06,
+    "observations": 298232,
+    "train_start": "2018-01-02",
+    "train_end": "2022-12-30",
+    "digest": "2c625c51d1141894e59631d1e409f117b45d04ea3e2bed61ce9a367eb8a4e022"
+  }
+}

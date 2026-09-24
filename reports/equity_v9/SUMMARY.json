@@ -1,0 +1,17 @@
+{
+  "status": "REJECTED",
+  "protocol_sha256": "d1f434310b78b15ff87368259b6e9e05d5ef09543fdd2a92faf5bf0a6e16cbce",
+  "selection": {
+    "status": "REJECTED",
+    "reason": "NO_V9_CANDIDATE_PASSED_FROZEN_PROFITABILITY_GATES",
+    "candidate": null,
+    "reused_audit_evaluated": false,
+    "selection_sha256": "8e18194236820465b655c54ee2b5faa9f357d5f10243f9496e0d1cf19f64e2c4"
+  },
+  "kill_tests": {
+    "status": "NOT_RUN_NO_SELECTED_CANDIDATE"
+  },
+  "reused_audit": "NOT_LOADED_FOR_SELECTION_OR_KILL_TESTS",
+  "prospective_start": "2026-09-25",
+  "orders_allowed": false
+}

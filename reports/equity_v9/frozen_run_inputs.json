@@ -1,0 +1,47 @@
+{
+  "protocol_sha256": "d1f434310b78b15ff87368259b6e9e05d5ef09543fdd2a92faf5bf0a6e16cbce",
+  "source_hashes": {
+    "adjusted_bars": "7d6a10505c6190768e796e11b45e5fa6fbfe3daddb0551bdf9f646c7a0d92d48",
+    "raw_bars": "b25e4997afe224338c5b78e8179ae7c384a4ad330b3edb7047d0f7f5fd26f37d"
+  },
+  "candidate_ids": [
+    "K00",
+    "K01",
+    "K02",
+    "K03",
+    "K04",
+    "K05",
+    "K06",
+    "K07",
+    "K08"
+  ],
+  "data_label": "research_snapshot_only",
+  "cohort_size": 341,
+  "development_end": "2024-12-31",
+  "reused_audit_loaded_for_selection": false,
+  "config": {
+    "rebalance_every": 3,
+    "volatility_window": 60,
+    "max_gross": 1.0,
+    "max_name": 0.01,
+    "max_turnover": 0.25,
+    "max_participation": 0.001,
+    "target_buffer": 0.95,
+    "residual_vol_mode": "none",
+    "stress_scaler": false,
+    "separate_side_ranks": false,
+    "nav": 100000.0,
+    "neutrality_tolerance": 1e-08
+  },
+  "costs": {
+    "commission_bps": 0.5,
+    "half_spread_bps": 2.0,
+    "slippage_bps": 1.0,
+    "impact_coefficient": 0.1,
+    "borrow_annual": 0.03,
+    "calendar_days": 1.0,
+    "multiplier": 1.0
+  },
+  "earnings_filter": "BLOCKED_MISSING_PIT_EARNINGS_CALENDAR",
+  "name_level_borrow": "BLOCKED_MISSING_PIT_BORROW_DATA"
+}

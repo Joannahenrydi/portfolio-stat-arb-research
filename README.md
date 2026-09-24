@@ -28,6 +28,7 @@ cohort 为 356 只。当前最好的冻结候选仍未通过：
 - [v5 Conditional Market-Neutral 实验报告](reports/equity_v5/REPORT.md)
 - [v7 Residual Short-Horizon Alpha Discovery 报告](reports/equity_v7/REPORT.md)
 - [v8 论文目标函数策略袖套分配报告](reports/equity_v8/REPORT.md)
+- [v9 自适应 Kalman、正交 Alpha 与成本置信度报告](reports/equity_v9/REPORT.md)
 
 ## 目录
 
@@ -69,6 +70,9 @@ python scripts/audit_equity_snapshot.py
 python scripts/evaluate_equity_v2.py
 python scripts/robustness_equity_v2.py
 python scripts/build_optimized_target.py
+PYTHONPATH=. python scripts/evaluate_equity_v9.py
+PYTHONPATH=. python scripts/diagnose_equity_v9.py
+PYTHONPATH=. python scripts/plot_v9_results.py
 python -m live.generate_shadow
 ```
 
