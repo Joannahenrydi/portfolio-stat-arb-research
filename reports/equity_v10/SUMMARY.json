@@ -1,0 +1,15 @@
+{
+  "status": "REJECTED",
+  "selection": {
+    "status": "REJECTED",
+    "reason": "NO_V10_CANDIDATE_PASSED_FROZEN_ACCEPTANCE_GATES",
+    "candidate": null,
+    "selection_sha256": "1c2cd6d74152e397db5b9b5fae6acc0623388e9fd3e132e7a5a454007b0c5857",
+    "reused_audit_evaluated": false
+  },
+  "kill_tests": {
+    "status": "NOT_RUN_NO_SELECTED_CANDIDATE"
+  },
+  "reused_audit": "NOT_LOADED",
+  "orders_allowed": false
+}

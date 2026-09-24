@@ -1,0 +1,67 @@
+{
+  "protocol_sha256": "fe90ae0bbe53c92d69f0fa5654bf87f92b168735638dedb6b0925404a2d220eb",
+  "source_hashes": {
+    "adjusted_bars": "7d6a10505c6190768e796e11b45e5fa6fbfe3daddb0551bdf9f646c7a0d92d48",
+    "raw_bars": "b25e4997afe224338c5b78e8179ae7c384a4ad330b3edb7047d0f7f5fd26f37d",
+    "candidate_master": "4822f1002808be0afcdc43d7f0672c836975c476ca67b697256c741eca405f8e"
+  },
+  "matrix": {
+    "X00": {
+      "tail_fraction": null,
+      "rebalance_every": 3,
+      "ewma3": false
+    },
+    "X01": {
+      "tail_fraction": null,
+      "rebalance_every": 3,
+      "ewma3": false
+    },
+    "X02": {
+      "tail_fraction": 0.25,
+      "rebalance_every": 3,
+      "ewma3": false
+    },
+    "X03": {
+      "tail_fraction": 0.15,
+      "rebalance_every": 3,
+      "ewma3": false
+    },
+    "X04": {
+      "tail_fraction": 0.25,
+      "rebalance_every": 5,
+      "ewma3": false
+    },
+    "X05": {
+      "tail_fraction": 0.15,
+      "rebalance_every": 5,
+      "ewma3": false
+    },
+    "X06": {
+      "tail_fraction": 0.25,
+      "rebalance_every": 10,
+      "ewma3": false
+    },
+    "X07": {
+      "tail_fraction": 0.15,
+      "rebalance_every": 10,
+      "ewma3": false
+    },
+    "X08": {
+      "tail_fraction": 0.15,
+      "rebalance_every": 5,
+      "ewma3": true
+    }
+  },
+  "costs": {
+    "commission_bps": 0.5,
+    "half_spread_bps": 2.0,
+    "slippage_bps": 1.0,
+    "impact_coefficient": 0.1,
+    "borrow_annual": 0.03,
+    "calendar_days": 1.0,
+    "multiplier": 1.0
+  },
+  "reused_audit_loaded_for_selection": false,
+  "expanded_source_names": 503,
+  "data_label": "research_snapshot_only"
+}
