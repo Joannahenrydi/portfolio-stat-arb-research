@@ -76,7 +76,7 @@ the run artifact before backtesting.
 A candidate needs train net Sharpe above 0.70, validation net Sharpe above 0.50, validation net
 CAGR above 5%, drawdown no worse than -15% in both intervals, annual turnover no greater than 25x,
 zero constraint failures, and positive validation return with 2x costs, one-session signal delay,
-one pair removed at a time, and rebalance frequencies 3 and 10. Only after both locks are durable
+one pair removed at a time for candidates containing a relative-value family, and rebalance
+frequencies 3 and 10. Pair removal is `NOT_APPLICABLE` for a trend-only winner. Only after both locks are durable
 may the 2021-2024 test be loaded. Test Sharpe must exceed 0.50, test CAGR 5%, and test drawdown must
 remain above -15%. Failure leaves the strategy rejected.
-
