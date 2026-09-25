@@ -1,0 +1,7 @@
+{
+  "status": "REJECTED",
+  "reason": "NO_V12_CANDIDATE_PASSED_TRAIN_VALIDATION_GATES",
+  "candidate": null,
+  "locked_test_evaluated": false,
+  "selection_sha256": "9ef9796639a3a4bf33077fa9147790fbb62bb5b681c4acf36b428dcad9ed0a23"
+}
