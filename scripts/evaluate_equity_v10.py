@@ -43,8 +43,12 @@ def tail_select(
     return usable.where(tails)
 
 
-def load_expanded_panels(source: Path, end: pd.Timestamp) -> tuple[dict, pd.DataFrame]:
+def load_expanded_panels(
+    source: Path, end: pd.Timestamp, excluded_symbols: set[str] | None = None
+) -> tuple[dict, pd.DataFrame]:
     candidates = pd.read_csv(source / "equity_candidates.csv").sort_values("security_id")
+    excluded_symbols = excluded_symbols or set()
+    candidates = candidates.loc[~candidates.symbol.isin(excluded_symbols)].copy()
     symbols = candidates.symbol.tolist()
     sectors = candidates.set_index("symbol").sector.reindex(symbols)
     calendar = pd.read_csv(source / "market_calendar.csv")
