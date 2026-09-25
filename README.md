@@ -30,6 +30,7 @@ cohort 为 356 只。当前最好的冻结候选仍未通过：
 - [v8 论文目标函数策略袖套分配报告](reports/equity_v8/REPORT.md)
 - [v9 自适应 Kalman、正交 Alpha 与成本置信度报告](reports/equity_v9/REPORT.md)
 - [v10 扩大标的与双尾集中实验报告](reports/equity_v10/REPORT.md)
+- [v11 Train-only OHLCV Alpha Discovery 报告](reports/equity_v11/REPORT.md)
 
 ## 目录
 

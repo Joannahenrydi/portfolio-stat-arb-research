@@ -1,0 +1,7 @@
+{
+  "status": "REJECTED",
+  "reason": "NO_V11_CANDIDATE_PASSED_FROZEN_ACCEPTANCE_GATES",
+  "candidate": null,
+  "selection_sha256": "32577e04bda2d376240852ca634ed51daf320b856682b013141e62c95afb5a1b",
+  "reused_audit_evaluated": false
+}
