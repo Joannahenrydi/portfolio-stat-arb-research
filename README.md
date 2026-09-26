@@ -1,22 +1,61 @@
-# US Equity Market-Neutral Portfolio Strategy
+# Cross-Asset Statistical Arbitrage & Trend Research Platform
 
-这是一个**股票组合统计套利平台**。主策略是美股日频横截面 residual mean reversion，
-Kalman dynamic residual 和量价/波动错位作为并行 alpha family；系统在组合层统一做净敞口、
-市场 beta、行业与可选风格因子中性化，然后进行协方差与成本感知的权重优化。
+Research platform for cross-asset trend, equity statistical arbitrage, cost-aware portfolio
+construction, walk-forward validation and fail-closed paper execution.
 
-## 已完成的历史研究
+> **Current decision: REJECTED.** Cross-asset trend showed economically meaningful development
+> performance under risk-budgeted construction, but failed stability gates across regimes. No
+> strategy was promoted and paper orders remain disabled.
 
-Alpaca SIP raw/all-adjusted 日线覆盖 503 只当前候选和 SPY；流动性筛选 400 只，连续历史研究
-cohort 为 356 只。当前最好的冻结候选仍未通过：
+## Latest evidence
 
-| 净结果 | Train 2018–2022 | Validation 2023–2024 | Audit 2025–2026 |
-|---|---:|---:|---:|
-| CAGR | -1.82% | +0.37% | +6.07% |
-| Sharpe | -0.30 | 0.11 | 0.83 |
+The project began with U.S. equity residual alpha and evolved into a 45-ETF multi-asset platform
+covering equities, rates, credit, metals, commodities and currencies. The main research finding is
+that portfolio construction is no longer the binding constraint: price-only alpha loses stability
+after 2017.
 
-这些结果是 `research_snapshot_only`：Alpaca 当前 asset master 和当前 ETF 持仓不能证明历史时点
-成员资格。代码包含严格的双时点 PIT gate，但只有 Alpaca 时，无法把 2018–2026 历史回测认证为
-无幸存者偏差。
+| Frozen experiment | Train net Sharpe | Development net Sharpe | Net CAGR | Max drawdown | Decision |
+|---|---:|---:|---:|---:|---|
+| v13 exact-neutral trend | -0.444 | -0.715 | -0.74% development | -4.28% development | Reject |
+| v13 risk-budgeted trend | 0.726 | **0.638** | **5.16% development** | -16.43% development | Reject: drawdown |
+| v15 time-series trend | 0.688 | 0.547 | 4.33% development | **-14.68% development** | Reject: return gates |
+| v16 50/50 trend ensemble | **0.865** | 0.431 | 8.47% train / 3.35% development | -14.25% train / -15.16% development | Reject: instability |
+| v18 expanded-universe winner | **0.823** | 0.212 | 7.25% train / 1.41% development | **-13.64% train** / -12.93% development | Reject: instability |
+
+v13 isolated a construction error in v12: forcing equity, duration, credit, commodity and USD
+exposure to exactly zero removed the macro trend the strategy was meant to earn. Replacing exact
+neutrality with explicit risk budgets raised development net Sharpe from -0.715 to 0.638. Later
+versions added time-series momentum, train-only ensemble selection, 45-ETF universe expansion and
+risk-target selection. These improved training performance and drawdown control, but the first
+development evaluation remained too weak for promotion.
+
+The 2021–2024 locked test was never evaluated in v13–v18 because no candidate passed development
+and kill-test gates. The next research cycle requires a distinct information source such as futures
+carry/term structure, intraday/overnight decomposition, macro surprises, PIT earnings/revisions or
+historical borrow data.
+
+- [v13–v18 consolidated report](reports/cross_asset_v13_v18/REPORT.md)
+- [Development NAV and drawdown](reports/cross_asset_v13_v18/development_nav_drawdown.png)
+- [Research ladder](reports/cross_asset_v13_v18/research_ladder.png)
+- [v18 frozen selection result](reports/cross_asset_v18/development_audit.csv)
+
+## Research capabilities
+
+- Point-in-time-aware data gates and explicit data-quality labels.
+- Cross-sectional residual, adaptive Kalman, price/volume and cross-asset trend alpha families.
+- Exact equity beta/sector neutrality and risk-budgeted macro portfolio construction.
+- Covariance risk, gross/net/name/factor/sleeve, turnover and ADV participation constraints.
+- Commission, spread, slippage, square-root impact and borrow-cost accounting.
+- Frozen train/development/test protocols, delay/cost/universe kill tests and locked-test controls.
+- Alpaca paper execution that emits no orders unless every promotion gate passes.
+
+## Equity research foundation
+
+The original Alpaca equity panel contains SIP raw/all-adjusted daily bars for 503 current candidates
+and SPY, a liquid top-400 universe and a 356-name continuous-history research cohort. Those results
+remain labeled `research_snapshot_only`: Alpaca's current asset master cannot certify historical
+membership or remove survivor bias. The code retains strict bitemporal PIT gates for vendor data
+that can provide historical security-master records.
 
 - [策略执行报告](reports/equity_final/REPORT.md)
 - [数据审计](reports/equity_v2/data_quality/DATA_STATUS.md)
