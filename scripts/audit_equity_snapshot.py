@@ -117,20 +117,25 @@ def audit(source: Path, output: Path, calendar_path: Path | None = None):
                                 "Suspension events and live borrow checks incomplete",
                                 "No accepted walk-forward/OOS evidence or prospective paper history"]}
     (output / "data_audit.json").write_text(json.dumps(result, indent=2, allow_nan=False)+"\n")
-    body = f"""# 股票数据核验（过程记录，非十二周最终结果）
+    body = f"""# Equity Data Audit (Interim Record, Not the Final 12-Week Result)
 
-已采集 {len(candidates)} 只股票候选及 SPY。SIP 原始日线 {len(raw):,} 条，复权日线 {len(adjusted):,} 条。
-交易日历为 Alpaca 独立日历；没有用 SPY 缺失日期缩减交易日。
+Collected {len(candidates)} equity candidates plus SPY: {len(raw):,} raw SIP daily bars and
+{len(adjusted):,} adjusted daily bars. The trading calendar is an independent Alpaca calendar;
+missing SPY dates never remove market sessions.
 
-按原始收盘价 ≥ $5、有效历史 ≥ 252 个交易日、最近 60 个交易日覆盖 ≥ 95%、
-SIP 60 日中位日成交金额 ≥ $20m、最近日有效且非连续不变价格，得到 {int(screen.eligible.sum())} 只合格候选，按流动性排序选出 {len(selected)} 只。
-名单见 `prospective_400_stocks.csv`，每只的排除原因见 `stock_eligibility_audit.csv`。
+The screen requires raw close >= $5, at least 252 valid sessions, at least 95% coverage over the
+latest 60 sessions, SIP 60-session median dollar volume >= $20 million, a valid latest bar, and no
+stale-price run. It produced {int(screen.eligible.sum())} eligible candidates and selected
+{len(selected)} by liquidity. See `prospective_400_stocks.csv`; per-name exclusion reasons are in
+`stock_eligibility_audit.csv`.
 
-原始/复权键不匹配：{len(unmatched)}；异常复权单日收益绝对值 > 30%：{len(extremes)}，单独列出待核查。
+Unmatched raw/adjusted keys: {len(unmatched)}. Adjusted daily returns with absolute value above
+30%: {len(extremes)}, retained separately for review.
 
-该名单仅是自 {manifest['available_at']} 起可见的当前股票池筛选，不能用于回填 2018–2026 历史成分。
-历史持仓、发布时点、证券身份和退市终值尚需核验，因此 approved_weight 均为零，没有订单。
-503 只当前股票的行情下载完成不等于历史 PIT 数据层完成。
+This list is a current-universe screen available only from {manifest['available_at']}; it cannot
+backfill 2018–2026 membership. Historical holdings, publication timestamps, security identity and
+delisting terminal values remain unverified, so every approved_weight is zero and there are no
+orders. Downloading current history for 503 stocks does not complete a historical PIT data layer.
 """
     (output / "DATA_STATUS.md").write_text(body)
     print(json.dumps({k:result[k] for k in ["status","eligible_stocks","selected_stocks","unmatched_raw_adjusted_rows","large_adjusted_returns"]},indent=2))

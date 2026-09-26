@@ -1,23 +1,27 @@
-# 组合策略研究结果
+# Portfolio Strategy Research Result
 
-状态：拒绝晋级，批准仓位为现金；没有提交订单。
+**Status: REJECTED / CASH. No orders were submitted.**
 
-数据来源：Alpaca IEX ETF 数据交叉检查。
+Data source: Alpaca IEX ETF cross-check.
 
-采集 23 个代码，35,322 条日线，2018-11-01 至 2026-09-18。22 个 ETF 为候选，SPY 为基准。
+The panel contains 35,322 daily bars for 23 symbols from 2018-11-01 through 2026-09-18: 22 candidate
+ETFs plus SPY as benchmark.
 
-| 区间 | 扣成本收益 | Sharpe | 最大回撤 | 日均换手 |
+| Period | After-cost return | Sharpe | Max drawdown | Average daily turnover |
 |---|---:|---:|---:|---:|
-| 验证 2023–2024 | -2.08% | -5.51 | -2.10% | 8.48% |
-| 时间留出审计 2025–2026 | 1.85% | 0.36 | -1.12% | 9.59% |
+| Validation 2023–2024 | -2.08% | -5.51 | -2.10% | 8.48% |
+| Holdout audit 2025–2026 | 1.85% | 0.36 | -1.12% | 9.59% |
 
-固定组合：残差反转 + Kalman 动态相对价值 + 量价偏离，等权混合。按 ETF 经济组与市场 beta 中性化，考虑持仓漂移、下一收盘执行、冲击/价差/佣金/借券成本。
+The frozen portfolio equally blends residual reversal, Kalman dynamic relative value and
+price/volume dislocation. It neutralizes ETF economic groups and market beta, models holding drift,
+executes at the next close, and charges impact, spread, commission and borrow.
 
-基础统计门槛通过：False；全部压力测试通过：False。详细分策略、分年度和成本分解见 evaluation.json；每日收益、仓位及按名称归因见 CSV。
+Base statistical gates passed: False. All stress tests passed: False. See `evaluation.json` for
+sleeve, annual and cost attribution; CSV files contain daily returns, positions and name-level PnL.
 
-## 压力测试
+## Stress tests
 
-| 场景 | 验证收益 | 审计收益 |
+| Scenario | Validation return | Audit return |
 |---|---:|---:|
 | double_cost | -4.15% | -0.16% |
 | delay_one_more | -2.48% | -0.12% |
@@ -27,12 +31,17 @@
 | remove_top_5pct | -0.36% | -2.09% |
 | remove_20pct | 0.69% | -1.59% |
 
-## 未完成的生产条件
+## Outstanding production requirements
 
-- Historical PIT security master and delisting reconciliation unavailable
-- Retrospective adjusted prices; raw execution/action reconciliation incomplete
-- Borrow availability and observed spreads/fills unavailable
-- ETF prototype; 200–500-stock universe not collected
-- 2025–2026 already inspected in previous project: not blind OOS
+- Historical PIT security master and delisting reconciliation are unavailable.
+- Prices are retrospectively adjusted; raw execution and action reconciliation is incomplete.
+- Borrow availability and observed spreads/fills are unavailable.
+- This is an ETF prototype; the 200–500-stock universe was not collected for this run.
+- The 2025–2026 interval was inspected in a previous project and is not blind OOS.
 
-本次为 ETF 原型，不是美股 400 标的 PIT 回测。IEX 成交量不能解释为全市场 ADV，结果不能与全市场数据直接等同比较。成本为预设代理；不能据此宣称可交易 alpha。market cap/历史行业标签缺失，未补造。paper_targets.csv 中 research_weight 仅供观察，approved_weight 均为 0。下一步需要本机配置 Alpaca 凭据，获得历史证券主表及公司行为数据，并完成真实 paper 成交对账和 2–3 个月前瞻观察。
+This ETF prototype is not a PIT backtest of 400 U.S. equities. IEX volume cannot represent total
+market ADV, and results are not directly comparable with consolidated-market data. Costs are frozen
+proxies and do not establish tradable alpha. Missing market cap and historical sector labels were
+not fabricated. `paper_targets.csv` contains research_weight for observation only; every
+approved_weight is zero. Production requires historical security-master and corporate-action data,
+reconciled paper fills and two to three months of prospective observation.

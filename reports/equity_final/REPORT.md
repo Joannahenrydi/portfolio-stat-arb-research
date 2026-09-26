@@ -1,50 +1,57 @@
-# 12 周股票统计套利研究执行报告
+# 12-Week Equity Statistical-Arbitrage Research Report
 
-## 决策
+## Decision
 
-**REJECTED / CASH：不允许下单，批准仓位为 0。**
+**REJECTED / CASH: orders are disabled and approved exposure is zero.**
 
-系统已完成股票数据采集、alpha、市场/行业/beta 中性化、组合构造、成本、时间切分、
-压力测试和 shadow target 生成。没有找到在训练与验证阶段都稳定为正的扣成本 alpha；
-因此不能承诺回测表现，也不能启动 paper 订单。2025–2026 的正收益只能作为已重复查看的
-时间留出证据，不能覆盖较弱的训练/验证结果。
+The system completed equity data collection, alpha generation, market/sector/beta neutralization,
+portfolio construction, cost modeling, chronological evaluation, stress tests and shadow-target
+generation. No after-cost alpha remained consistently positive in both train and validation.
+Backtest performance therefore cannot be promised and paper orders cannot begin. Positive returns
+in 2025–2026 are reused holdout evidence and do not override weaker train/validation results.
 
-## 数据和股票池
+## Data and universe
 
-- Alpaca SIP：503 只当前股票候选加 SPY，2017-01-03 至 2026-09-18。
-- 原始和复权日线各 1,161,734 条；键不匹配 0，重复 0，无效 OHLCV 0。
-- 初筛得到 499 只合格股票，按流动性取 400；为避免把缺失持仓收益当作 0，历史回测仅使用
-  2018–2026 每个交易日都有复权收盘价且无研究期内 >50% 身份连续性异常的 356 只。
-- 已保存 14,710 条公司行动记录及独立交易日历；历史 IVV 月度持仓请求 117 个，接受 111 个。
-- 本轮按用户后续要求允许当前成分股回填，因此结果明确标记为
-  `research_snapshot_only`，存在严重幸存者、完整历史和当前行业分类偏差。
+- Alpaca SIP: 503 current equity candidates plus SPY, from 2017-01-03 through 2026-09-18.
+- 1,161,734 raw and 1,161,734 adjusted daily bars; zero key mismatches, duplicates or invalid OHLCV rows.
+- The initial screen admitted 499 stocks and selected the top 400 by liquidity. To avoid treating
+  missing held returns as zero, historical backtests used the 356 stocks with adjusted closes on
+  every 2018–2026 session and no research-period identity discontinuity above 50%.
+- The archive contains 14,710 corporate-action records and an independent trading calendar; 111 of
+  117 requested historical IVV monthly holdings snapshots were accepted.
+- Later user direction permitted current-constituent backfilling, so results are explicitly labeled
+  `research_snapshot_only` and retain material survivor, complete-history and current-sector bias.
 
-## Alpha 与组合
+## Alpha and portfolio
 
-实现了短期 residual reversal、Kalman prior innovation、量价/波动错位、原始和残差动量、
-低特质波动、趋势效率、距 52 周高点、隔夜及日内动量。每次调仓将得分投影出净敞口、
-当前行业 dummy 和 126 日 prior beta，随后限制 gross、单股、换手和 ADV 参与率。
-持仓在调仓间按真实收益漂移，不假设免费每日再平衡。
+Implemented families include short-horizon residual reversal, Kalman prior innovation,
+price/volume and volatility dislocation, raw and residual momentum, low idiosyncratic volatility,
+trend efficiency, distance from the 52-week high, and overnight/intraday momentum. At every
+rebalance, scores are projected away from dollar net exposure, current-sector dummies and prior
+126-session beta, then constrained by gross, single-name, turnover and ADV participation limits.
+Holdings drift with realized returns between rebalances; the backtest does not assume free daily
+rebalancing.
 
-成本包括 0.5 bps commission、2 bps half-spread、1 bp slippage、平方根冲击和 3% 年化借券。
-信号在收盘 `t` 形成，最早只能赚取 `t` 到 `t+1` 的收益。
+Costs include 0.5 bps commission, 2 bps half-spread, 1 bp slippage, square-root impact and 3% annual
+borrow. Signals form at close `t` and can first earn returns from `t` to `t+1`.
 
-另用 2018–2022 的 379,947 个完成标签校准胜出 signal，并以 2026-09-18 以前的 252 日收益估计
-shrinkage covariance，实际运行 356 股票的成本感知优化器。最优解为 `NO_ECONOMIC_TRADE`：预期
-alpha 不足以覆盖成本，理论目标为全现金。该结果保存在 `optimized_portfolio/`，不改变拒绝结论。
+The winning signal was separately calibrated on 379,947 completed 2018–2022 labels. A shrinkage
+covariance estimate used 252 sessions ending before 2026-09-18, and the cost-aware optimizer ran on
+all 356 stocks. Its optimum was `NO_ECONOMIC_TRADE`: expected alpha did not cover costs, so the
+theoretical target was all cash. The artifact in `optimized_portfolio/` does not change the rejection.
 
-## 时间检验结果
+## Chronological results
 
-v2 在 9 个预先冻结候选中按验证 Sharpe 选择 252 日 residual momentum、跳过最近 21 日：
+Among nine pre-frozen v2 candidates, validation Sharpe selected 252-session residual momentum with
+the latest 21 sessions skipped:
 
-| 区间 | 净 CAGR | Sharpe | 最大回撤 | 年化换手 |
+| Period | Net CAGR | Sharpe | Max drawdown | Annual turnover |
 |---|---:|---:|---:|---:|
 | Train 2018–2022 | -1.82% | -0.30 | -11.94% | 6.94x |
 | Validation 2023–2024 | 0.37% | 0.11 | -4.53% | 5.65x |
 | Reused audit 2025–2026-09 | 6.07% | 0.83 | -5.32% | 8.67x |
 
-随后冻结的 v3 有 54 个动量集中度/调仓频率候选，v4 有 48 个不同价格路径 alpha 候选；
-两轮都没有候选同时满足训练和验证 Sharpe 为正。总计 111 个冻结候选，没有通过稳健晋级规则。
-
-
-
+The subsequently frozen v3 matrix contained 54 momentum concentration/rebalance candidates, and
+v4 contained 48 alternative price-path alpha candidates. Neither study produced a candidate with
+positive Sharpe in both train and validation. Across 111 frozen candidates, none passed the robust
+promotion rules.

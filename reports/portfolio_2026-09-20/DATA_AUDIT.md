@@ -1,9 +1,22 @@
-# 数据采集与覆盖审计
+# Data Collection and Coverage Audit
 
-本次实际认证下载 Alpaca IEX，23 个代码，原始日线 35,322 条，另有同范围 ALL-adjusted 日线。另采集 Yahoo 55,776 条作为冻结协议的主研究数据。
+This run downloaded and authenticated 35,322 raw Alpaca IEX daily bars for 23 symbols plus
+ALL-adjusted bars over the same range. It also collected 55,776 Yahoo bars as the primary research
+data specified by the frozen protocol.
 
-Alpaca 请求 2017–2026，但多数代码实际从 2020-07-27 才开始，SPY 有一条更早的孤立记录。未补造缺失数据，未将短历史声称为完整 2018–2022 训练集。IEX 仅单一交易所；流动性阈值和容量数值均为该 feed 代理，不可解释为全市场容量。
+Alpaca requested 2017–2026, but most symbols begin on 2020-07-27 and SPY has one isolated earlier
+record. Missing history was not fabricated and the short series is not represented as a complete
+2018–2022 training set. IEX is a single-venue feed; liquidity thresholds and capacity estimates are
+feed proxies rather than total-market capacity.
 
-同日期、同代码可比的相邻共同观测收益中，有 897 个差异超过 1 个百分点。见 source_return_discrepancies.csv，差异包含 feed 收盘、缺失 bar 和复权因素，未据此自动更正任一来源。跨来源差异意味着不能将一个来源的历史模型表现视为另一个来源的可执行收益。
+Among adjacent same-date/same-symbol observations available from both sources, 897 returns differ
+by more than one percentage point. See `source_return_discrepancies.csv`. Differences include feed
+closes, missing bars and adjustment factors; neither source was automatically rewritten. These
+cross-source discrepancies prevent treating performance from one source as directly executable on
+the other.
 
-原始文件：output/portfolio_v1/alpaca_data/bars_raw.csv 与 bars_all.csv；Yahoo 原始文件及元数据在 output/portfolio_v1/market_data。各文件 SHA256 见 data_file_hashes.json，逐代码起止日期见 source_coverage.csv。密钥未写入项目文件；仅经进程环境用于只读下载，没有调用下单接口。
+Raw files are `output/portfolio_v1/alpaca_data/bars_raw.csv` and `bars_all.csv`; Yahoo inputs and
+metadata are in `output/portfolio_v1/market_data`. `data_file_hashes.json` records every SHA256, and
+`source_coverage.csv` records per-symbol start/end dates. Credentials were never written to project
+files; the process environment supplied them only for read-only downloads, and no order endpoint
+was called.

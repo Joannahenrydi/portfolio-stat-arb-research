@@ -57,36 +57,36 @@ remain labeled `research_snapshot_only`: Alpaca's current asset master cannot ce
 membership or remove survivor bias. The code retains strict bitemporal PIT gates for vendor data
 that can provide historical security-master records.
 
-- [策略执行报告](reports/equity_final/REPORT.md)
-- [数据审计](reports/equity_v2/data_quality/DATA_STATUS.md)
-- [回测结果](reports/equity_v2/backtest/evaluation.json)
+- [Strategy execution report](reports/equity_final/REPORT.md)
+- [Data audit](reports/equity_v2/data_quality/DATA_STATUS.md)
+- [Backtest results](reports/equity_v2/backtest/evaluation.json)
 - [Kill tests](reports/equity_v2/robustness/kill_tests.csv)
-- [晋级决策](reports/equity_final/promotion_decision.json)
-- [成本感知优化目标](reports/equity_final/optimized_portfolio/optimized_target.json)
-- [组合诊断图](reports/equity_final/diagnostics/README.md)
-- [v5 Conditional Market-Neutral 实验报告](reports/equity_v5/REPORT.md)
-- [v7 Residual Short-Horizon Alpha Discovery 报告](reports/equity_v7/REPORT.md)
-- [v8 论文目标函数策略袖套分配报告](reports/equity_v8/REPORT.md)
-- [v9 自适应 Kalman、正交 Alpha 与成本置信度报告](reports/equity_v9/REPORT.md)
-- [v10 扩大标的与双尾集中实验报告](reports/equity_v10/REPORT.md)
-- [v11 Train-only OHLCV Alpha Discovery 报告](reports/equity_v11/REPORT.md)
-- [v12 ETF 跨资产相对价值报告](reports/cross_asset_v12/REPORT.md)
-- [v13–v18 跨资产风险预算、趋势融合与扩展标的报告](reports/cross_asset_v13_v18/REPORT.md)
+- [Promotion decision](reports/equity_final/promotion_decision.json)
+- [Cost-aware optimized target](reports/equity_final/optimized_portfolio/optimized_target.json)
+- [Portfolio diagnostics](reports/equity_final/diagnostics/README.md)
+- [v5 Conditional Market-Neutral report](reports/equity_v5/REPORT.md)
+- [v7 Residual Short-Horizon Alpha Discovery report](reports/equity_v7/REPORT.md)
+- [v8 research-objective sleeve allocation report](reports/equity_v8/REPORT.md)
+- [v9 adaptive Kalman, orthogonal alpha and cost-confidence report](reports/equity_v9/REPORT.md)
+- [v10 expanded-universe and tail-concentration report](reports/equity_v10/REPORT.md)
+- [v11 Train-only OHLCV Alpha Discovery report](reports/equity_v11/REPORT.md)
+- [v12 ETF cross-asset relative-value report](reports/cross_asset_v12/REPORT.md)
+- [v13–v18 risk-budget, trend-blend and universe-expansion report](reports/cross_asset_v13_v18/REPORT.md)
 
-## 目录
+## Repository structure
 
-- `data/`: 双时点 universe、有效时间/可用时间检查、历史身份门控。
-- `features/`: residual reversal、Kalman innovation、volume/volatility alpha 和训练期校准。
-- `models/`: 校准与协方差模型的稳定入口。
-- `portfolio/`: beta/行业/风格中性化及成本感知组合优化。
-- `execution/`: commission、spread、slippage、impact、borrow 成本。
-- `risk/`: fail-closed 晋级规则。
-- `backtest/`: 持仓漂移、expanding walk-forward、PnL attribution。
-- `live/`: 仅 Alpaca paper 的目标与订单计划；被拒绝时返回空订单。
-- `reports/`: 数据、回测、稳健性与拒绝记录。
-- `tests/`: 防前视、PIT、中性化、成本、400 股票优化和 paper gate 测试。
+- `data/`: bitemporal universes, effective/available-time checks and historical-identity gates.
+- `features/`: residual reversal, Kalman innovation, volume/volatility alpha and train calibration.
+- `models/`: stable interfaces for calibration and covariance models.
+- `portfolio/`: beta/sector/style neutralization and cost-aware portfolio optimization.
+- `execution/`: commission, spread, slippage, impact and borrow costs.
+- `risk/`: fail-closed promotion rules.
+- `backtest/`: holding drift, expanding walk-forward evaluation and PnL attribution.
+- `live/`: Alpaca-paper targets and order plans; rejected strategies emit no orders.
+- `reports/`: data, backtest, robustness and rejection records.
+- `tests/`: look-ahead, PIT, neutrality, cost, 400-stock optimization and paper-gate tests.
 
-## 安装与运行
+## Installation and execution
 
 ```bash
 python -m venv .venv
@@ -96,7 +96,7 @@ pytest -q
 ruff check data features models portfolio execution risk backtest live scripts tests
 ```
 
-数据采集：
+Data collection:
 
 ```bash
 export APCA_API_KEY_ID="..."
@@ -106,7 +106,7 @@ python scripts/collect_week1_alpaca.py \
   --feed sip --start 2017-01-01 --end 2026-09-19
 ```
 
-复现已冻结的研究和 shadow 输出：
+Reproduce the frozen equity research and shadow output:
 
 ```bash
 python scripts/audit_equity_snapshot.py
@@ -119,7 +119,7 @@ PYTHONPATH=. python scripts/plot_v9_results.py
 python -m live.generate_shadow
 ```
 
-复现冻结的跨资产研究：
+Reproduce the frozen cross-asset research:
 
 ```bash
 python -m scripts.evaluate_cross_asset_v13
@@ -132,4 +132,5 @@ python -m scripts.evaluate_cross_asset_v17
 python -m scripts.evaluate_cross_asset_v18
 ```
 
-连续 2–3 个月的 prospective paper record 必须从未来交易日真实积累，不能用历史回测代替。
+A two-to-three-month prospective paper record must accumulate on future trading days; historical
+backtests cannot substitute for it.
