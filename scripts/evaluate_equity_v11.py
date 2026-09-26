@@ -119,8 +119,7 @@ def qualify_features(
         labels[horizon], ends[horizon] = forward_total_return_labels(returns, horizon)
     rows = []
     daily_ics = {}
-    for name in HORIZONS:
-        horizon = HORIZONS[name]
+    for name, horizon in HORIZONS.items():
         completed = ends[horizon].le(TRAIN[1])
         signal = features[name].where(completed).loc[TRAIN[0] : TRAIN[1]]
         target = labels[horizon].where(completed).loc[TRAIN[0] : TRAIN[1]]
@@ -243,14 +242,13 @@ def main(source: Path, v2_output: Path, output: Path) -> None:
     write_json(output / "frozen_run_inputs.json", freeze)
 
     runs, rows = {}, []
-    for name in matrix_meta:
+    for name, (fraction, config, test_panels) in matrix_meta.items():
         if name in blocked:
             rows.append(
                 {"experiment": name, "status": "BLOCKED", "reason": blocked[name],
                  "eligible": False}
             )
             continue
-        fraction, config, test_panels = matrix_meta[name]
         score = tail_select(
             candidate_scores[name], test_panels["eligibility"], fraction
         )

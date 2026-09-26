@@ -117,9 +117,9 @@ def run_risk_budget_backtest(
             ]
             rows, upper = [], []
 
-            def add(row, limit):
-                rows.append(row)
-                upper.append(limit)
+            def add(row, limit, output_rows=rows, output_upper=upper):
+                output_rows.append(row)
+                output_upper.append(limit)
 
             eye, zeros = np.eye(n), np.zeros((n, n))
             for row, limit in zip(np.hstack([eye, -eye, zeros]), np.zeros(n)):
@@ -166,20 +166,24 @@ def run_risk_budget_backtest(
                 mask = sleeves.eq(sleeve).to_numpy(dtype=float)
                 remaining = float(cap) * scale - float(fixed_sleeve_gross.get(sleeve, 0))
                 add(np.r_[np.zeros(n), mask, np.zeros(n)], remaining)
-            linear = LinearConstraint(np.vstack(rows), -np.inf, np.asarray(upper))
+            linear_matrix = np.vstack(rows)
+            linear_upper = np.asarray(upper)
+            linear = LinearConstraint(linear_matrix, -np.inf, linear_upper)
 
-            def objective(x):
-                return float(10_000 * objective_vector @ x)
+            def objective(x, vector=objective_vector):
+                return float(10_000 * vector @ x)
 
-            def objective_jac(_x):
-                return 10_000 * objective_vector
+            def objective_jac(_x, vector=objective_vector):
+                return 10_000 * vector
 
-            def volatility_constraint(x):
-                weight = x[:n]
-                return (config.annual_volatility_cap ** 2 / 252) - float(weight @ covariance @ weight)
+            variance_cap = config.annual_volatility_cap ** 2 / 252
 
-            def volatility_jac(x):
-                return np.r_[-2 * covariance @ x[:n], np.zeros(2 * n)]
+            def volatility_constraint(x, dimension=n, cov=covariance, cap=variance_cap):
+                weight = x[:dimension]
+                return cap - float(weight @ cov @ weight)
+
+            def volatility_jac(x, dimension=n, cov=covariance):
+                return np.r_[-2 * cov @ x[:dimension], np.zeros(2 * dimension)]
 
             initial_weight = np.clip(
                 previous, -config.max_name * scale, config.max_name * scale
@@ -217,7 +221,9 @@ def run_risk_budget_backtest(
                                "gross": float(target.abs().sum()), "net": float(target.sum()),
                                "turnover": pending_turnover,
                                "turnover_limit": turnover_limit,
-                               "forecast_volatility": float(np.sqrt(result.x[:n] @ covariance @ result.x[:n] * 252)),
+                               "forecast_volatility": float(
+                                   np.sqrt(result.x[:n] @ covariance @ result.x[:n] * 252)
+                               ),
                                "risk_scaler": scale,
                                "net_budget_ratio": float(abs(target.sum()) / (config.net_cap * scale)),
                                "maximum_factor_budget_ratio": float(

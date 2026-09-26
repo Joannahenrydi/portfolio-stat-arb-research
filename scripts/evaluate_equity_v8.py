@@ -134,7 +134,7 @@ def segment_metrics(
         average_max_sleeve_weight=float(weights.max(axis=1).mean()),
         maximum_sleeve_weight=float(weights.max().max()),
         worst_calendar_year_return=float(yearly.min()),
-        refits=int(len(refits)),
+        refits=len(refits),
     )
     return metrics
 

@@ -9,7 +9,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
-import yfinance as yf
+
+try:
+    import yfinance as yf
+except ImportError:  # The data extra is unnecessary when importing the frozen universe.
+    yf = None
 
 UNIVERSE = [
     "SPY", "QQQ", "IWM", "EFA", "EEM", "VNQ", "SHY", "IEF", "TLT", "TIP",
@@ -26,6 +30,8 @@ def sha256(path: Path) -> str:
 
 
 def collect(output: Path, start: str, end: str) -> None:
+    if yf is None:
+        raise RuntimeError("yfinance is required; install the project with the data extra")
     output.mkdir(parents=True, exist_ok=False)
     captured = datetime.now(timezone.utc).isoformat()
     data = yf.download(

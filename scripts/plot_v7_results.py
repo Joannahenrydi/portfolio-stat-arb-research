@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-
 COLORS = {"train": "#2563eb", "development": "#ea580c"}
 
 

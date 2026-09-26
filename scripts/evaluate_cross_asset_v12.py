@@ -227,11 +227,11 @@ def main(source: Path, output: Path) -> None:
     (output / "frozen_run_inputs.json").write_text(json.dumps(freeze, indent=2) + "\n")
 
     runs, rows = {}, []
-    for name in configs:
+    for name, config in configs.items():
         if name in blocked:
             rows.append({"experiment": name, "status": "BLOCKED", "reason": blocked[name], "eligible": False})
             continue
-        result = run_one(scores[name], data, loadings, configs[name], costs)
+        result = run_one(scores[name], data, loadings, config, costs)
         runs[name] = result
         train, validation = segment_metrics(result, *TRAIN), segment_metrics(result, *VALIDATION)
         row = {"experiment": name, "status": result.status, "reason": result.reason,

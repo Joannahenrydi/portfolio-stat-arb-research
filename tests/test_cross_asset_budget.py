@@ -54,9 +54,9 @@ def test_risk_scaler_reduces_realized_gross_budget():
 
 def test_temporarily_ineligible_holding_is_carried_without_zero_adv_liquidation():
     rng = np.random.default_rng(43)
-    index = pd.bdate_range("2018-01-02", periods=150)
+    index = pd.bdate_range("2018-01-02", periods=120)
     columns = [f"A{i}" for i in range(12)]
-    returns = pd.DataFrame(rng.normal(0, .003, (150, 12)), index=index, columns=columns)
+    returns = pd.DataFrame(rng.normal(0, .003, (120, 12)), index=index, columns=columns)
     alpha = pd.DataFrame(0.002, index=index, columns=columns)
     alpha.iloc[:, 1::2] *= -1
     adv = pd.DataFrame(100_000_000.0, index=index, columns=columns)

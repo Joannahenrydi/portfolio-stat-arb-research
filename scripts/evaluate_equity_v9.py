@@ -29,9 +29,11 @@ from scripts.evaluate_equity_v2 import TRAIN, VALIDATION
 from scripts.evaluate_equity_v7 import (
     load_panels,
     run_candidate,
-    segment_metrics as base_segment_metrics,
     sha256,
     subset_panels,
+)
+from scripts.evaluate_equity_v7 import (
+    segment_metrics as base_segment_metrics,
 )
 
 PROTOCOL = Path("docs/EQUITY_RESEARCH_PROTOCOL_V9.md")

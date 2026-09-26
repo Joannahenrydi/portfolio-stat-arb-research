@@ -19,9 +19,11 @@ from scripts.evaluate_equity_v2 import TRAIN, VALIDATION, read_panel
 from scripts.evaluate_equity_v7 import (
     load_panels,
     run_candidate,
-    segment_metrics as base_segment_metrics,
     sha256,
     subset_panels,
+)
+from scripts.evaluate_equity_v7 import (
+    segment_metrics as base_segment_metrics,
 )
 from scripts.evaluate_equity_v9 import standardize
 

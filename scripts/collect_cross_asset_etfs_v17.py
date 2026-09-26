@@ -8,13 +8,19 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
-import yfinance as yf
+
+try:
+    import yfinance as yf
+except ImportError:  # The data extra is unnecessary when importing the frozen universe.
+    yf = None
 
 from scripts.collect_cross_asset_etfs import sha256
 from scripts.cross_asset_v17_universe import UNIVERSE
 
 
 def collect(output: Path, start: str, end: str) -> None:
+    if yf is None:
+        raise RuntimeError("yfinance is required; install the project with the data extra")
     output.mkdir(parents=True, exist_ok=True)
     if any(output.iterdir()):
         raise FileExistsError(f"refusing to overwrite nonempty archive: {output}")

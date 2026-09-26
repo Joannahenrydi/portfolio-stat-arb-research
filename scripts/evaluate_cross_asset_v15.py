@@ -13,7 +13,14 @@ import pandas as pd
 
 from features.alphas import forward_total_return_labels
 from portfolio.optimizer import PortfolioCosts
-from scripts.evaluate_cross_asset_v12 import TEST, TRAIN, VALIDATION, build_family_scores, calibrate, load_data
+from scripts.evaluate_cross_asset_v12 import (
+    TEST,
+    TRAIN,
+    VALIDATION,
+    build_family_scores,
+    calibrate,
+    load_data,
+)
 from scripts.evaluate_cross_asset_v13 import (
     asset_sleeves,
     normalized_factor_loadings,
