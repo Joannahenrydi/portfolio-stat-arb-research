@@ -1,0 +1,7 @@
+{
+  "status": "REJECTED",
+  "reason": "TIME_SERIES_TREND_FAILED_FROZEN_GATES",
+  "candidate": null,
+  "locked_test_evaluated": false,
+  "selection_sha256": "121c5cda620c786316f9c060c884a74a48b8772ede8b1c1eb97d5cb2c5e3f2a3"
+}

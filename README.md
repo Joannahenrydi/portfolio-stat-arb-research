@@ -32,6 +32,7 @@ cohort 为 356 只。当前最好的冻结候选仍未通过：
 - [v10 扩大标的与双尾集中实验报告](reports/equity_v10/REPORT.md)
 - [v11 Train-only OHLCV Alpha Discovery 报告](reports/equity_v11/REPORT.md)
 - [v12 ETF 跨资产相对价值报告](reports/cross_asset_v12/REPORT.md)
+- [v13–v18 跨资产风险预算、趋势融合与扩展标的报告](reports/cross_asset_v13_v18/REPORT.md)
 
 ## 目录
 
@@ -77,6 +78,19 @@ PYTHONPATH=. python scripts/evaluate_equity_v9.py
 PYTHONPATH=. python scripts/diagnose_equity_v9.py
 PYTHONPATH=. python scripts/plot_v9_results.py
 python -m live.generate_shadow
+```
+
+复现冻结的跨资产研究：
+
+```bash
+python -m scripts.evaluate_cross_asset_v13
+python -m scripts.evaluate_cross_asset_v14
+python -m scripts.evaluate_cross_asset_v15
+python -m scripts.evaluate_cross_asset_v16
+python -m scripts.collect_cross_asset_etfs_v17 \
+  --output output/cross_asset_etfs_v17 --start 2007-01-01 --end 2025-01-01
+python -m scripts.evaluate_cross_asset_v17
+python -m scripts.evaluate_cross_asset_v18
 ```
 
 连续 2–3 个月的 prospective paper record 必须从未来交易日真实积累，不能用历史回测代替。

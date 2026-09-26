@@ -46,14 +46,14 @@ def factor_loadings() -> pd.DataFrame:
     return frame
 
 
-def load_data(path: Path, end: pd.Timestamp) -> dict:
+def load_data(path: Path, end: pd.Timestamp, universe=UNIVERSE) -> dict:
     raw = pd.read_csv(path, parse_dates=["date"])
-    raw = raw.loc[raw.date.le(end) & raw.symbol.isin(UNIVERSE)].copy()
+    raw = raw.loc[raw.date.le(end) & raw.symbol.isin(universe)].copy()
     dates = pd.DatetimeIndex(sorted(raw.loc[raw.symbol.eq("SPY"), "date"].unique()))
 
     def pivot(field):
         return raw.pivot(index="date", columns="symbol", values=field).reindex(
-            index=dates, columns=UNIVERSE
+            index=dates, columns=universe
         )
 
     close = pivot("adj_close")

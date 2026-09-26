@@ -1,0 +1,93 @@
+{
+  "protocol_sha256": "0f53d5cc8a406e2c36cf168be6b41299790f098ff66c05e3c2e3c4d8c48f32d2",
+  "source_sha256": "82347fef112a5f04dc2b5accf947f362eefe1a0a89f1c59bf143a369ab63e32e",
+  "universe": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "XLC",
+    "XLY",
+    "XLP",
+    "XLE",
+    "XLF",
+    "XLV",
+    "XLI",
+    "XLB",
+    "XLK",
+    "XLU",
+    "EFA",
+    "EEM",
+    "EWJ",
+    "EWU",
+    "EWZ",
+    "FXI",
+    "INDA",
+    "VNQ",
+    "BIL",
+    "SHY",
+    "IEF",
+    "TLT",
+    "TIP",
+    "GOVT",
+    "LQD",
+    "HYG",
+    "EMB",
+    "MUB",
+    "GLD",
+    "SLV",
+    "DBC",
+    "PDBC",
+    "USO",
+    "UNG",
+    "DBA",
+    "CPER",
+    "CORN",
+    "WEAT",
+    "UUP",
+    "FXE",
+    "FXY",
+    "FXB"
+  ],
+  "artifacts": {
+    "cross_sectional_trend": {
+      "status": "ADMITTED",
+      "reason": "OK",
+      "slope": 0.0006626986458047764,
+      "observations": 90637,
+      "mean_rank_ic": 0.0439774908702665,
+      "icir": 0.12982309770173542,
+      "digest": "c0c0b9f647c0e747864cc0407d84b5c806754fc309c05644cdf6fcb6a488cfb4"
+    },
+    "time_series_trend": {
+      "status": "ADMITTED",
+      "reason": "OK",
+      "slope": 0.0006636472646043921,
+      "observations": 90637,
+      "pooled_correlation": 0.015309003243188709,
+      "directional_accuracy": 0.521453710956894,
+      "digest": "c10af41e2522b2cd9498fbd25a41985e5bc83d1e623eaeb481ed40a55942dc56"
+    }
+  },
+  "weights": {
+    "E000": 0,
+    "E025": 0.25,
+    "E050": 0.5,
+    "E075": 0.75,
+    "E100": 1.0
+  },
+  "volatility_caps": [
+    0.08,
+    0.09,
+    0.1
+  ],
+  "costs": {
+    "commission_bps": 0,
+    "half_spread_bps": 1,
+    "slippage_bps": 1,
+    "impact_coefficient": 0.1,
+    "borrow_annual": 0.01,
+    "calendar_days": 7,
+    "multiplier": 1.0
+  },
+  "locked_test_loaded_for_selection": false
+}

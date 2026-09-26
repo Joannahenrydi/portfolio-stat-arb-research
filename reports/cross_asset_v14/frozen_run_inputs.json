@@ -1,0 +1,45 @@
+{
+  "protocol_sha256": "9fd822f2e50713a2c762564c34851028a991c48c29dc6e6f3ccb5d5061cde5ce",
+  "source_sha256": "2cf6341fe923c492a27b0ee49f36611985ab6a4f49a0c0f695a4f184c2f911e6",
+  "alpha": "frozen_v12_trend",
+  "portfolio": "frozen_v13_B03",
+  "calibration": {
+    "status": "ADMITTED",
+    "reason": "OK",
+    "slope": 0.0009144556998823329,
+    "observations": 42760,
+    "mean_rank_ic": 0.04371061921664811,
+    "icir": 0.11376206041353608,
+    "digest": "0ef4cfddd554ade13d72bd86cb5848c7251d255e72e0e99e1c7928ef0f47870e"
+  },
+  "scaler": {
+    "drawdown_levels": [
+      -0.1,
+      -0.2
+    ],
+    "volatility_quantiles": [
+      0.9,
+      0.975
+    ],
+    "volatility_thresholds": [
+      0.30057077908813623,
+      0.4960702666006601
+    ],
+    "train_scaler_distribution": {
+      "0.5": 237,
+      "0.75": 316,
+      "1.0": 1714
+    }
+  },
+  "costs": {
+    "commission_bps": 0,
+    "half_spread_bps": 1,
+    "slippage_bps": 1,
+    "impact_coefficient": 0.1,
+    "borrow_annual": 0.01,
+    "calendar_days": 7,
+    "multiplier": 1.0
+  },
+  "development_reused": true,
+  "locked_test_loaded_for_selection": false
+}

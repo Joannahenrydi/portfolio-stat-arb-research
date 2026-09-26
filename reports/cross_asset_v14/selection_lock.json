@@ -1,0 +1,7 @@
+{
+  "status": "REJECTED",
+  "reason": "STRESS_SCALER_FAILED_FROZEN_GATES",
+  "candidate": null,
+  "locked_test_evaluated": false,
+  "selection_sha256": "cabd5dd0250ff7d27a483023bcb7894830754d0e32fa9ff1c840f608d1159b45"
+}

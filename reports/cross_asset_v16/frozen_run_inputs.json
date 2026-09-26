@@ -1,0 +1,43 @@
+{
+  "protocol_sha256": "aa2e08faaf691860910d770db74eb6e8bf64eb2eac3e37c82df0ac824e2b25e0",
+  "source_sha256": "2cf6341fe923c492a27b0ee49f36611985ab6a4f49a0c0f695a4f184c2f911e6",
+  "artifacts": {
+    "cross_sectional_trend": {
+      "status": "ADMITTED",
+      "reason": "OK",
+      "slope": 0.0009144556998823329,
+      "observations": 42760,
+      "mean_rank_ic": 0.04371061921664811,
+      "icir": 0.11376206041353608,
+      "digest": "0ef4cfddd554ade13d72bd86cb5848c7251d255e72e0e99e1c7928ef0f47870e"
+    },
+    "time_series_trend": {
+      "status": "ADMITTED",
+      "reason": "OK",
+      "slope": 0.0010331401105422421,
+      "observations": 42760,
+      "pooled_correlation": 0.028290003304285438,
+      "directional_accuracy": 0.5283208606173995,
+      "digest": "a19b439689efb3c89720fdc38a8bcb14c9d67f3e4a5901c891d7426a1814b521"
+    }
+  },
+  "weights": {
+    "E000": 0,
+    "E025": 0.25,
+    "E050": 0.5,
+    "E075": 0.75,
+    "E100": 1.0
+  },
+  "portfolio": "frozen_v13_B03",
+  "costs": {
+    "commission_bps": 0,
+    "half_spread_bps": 1,
+    "slippage_bps": 1,
+    "impact_coefficient": 0.1,
+    "borrow_annual": 0.01,
+    "calendar_days": 7,
+    "multiplier": 1.0
+  },
+  "development_reused": true,
+  "locked_test_loaded_for_selection": false
+}

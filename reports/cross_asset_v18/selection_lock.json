@@ -1,0 +1,9 @@
+{
+  "status": "REJECTED",
+  "reason": "TRAIN_WINNER_FAILED_DEVELOPMENT_GATES",
+  "candidate": null,
+  "train_selected_candidate": "E050_V09",
+  "locked_test_evaluated": false,
+  "train_selection_sha256": "46d6ff7756a0534c436e5e8c2b07ba6451750203fb5e241dd91e0a746a42fe85",
+  "development_audit_sha256": "acc62b0ed58962363b13e22e62ddb63e97609996d9e5c1a4d7131f03a8af6ae9"
+}

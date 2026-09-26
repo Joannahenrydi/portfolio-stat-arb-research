@@ -1,0 +1,78 @@
+{
+  "protocol_sha256": "43a89bec95de7c9696e88bcc8191682f08682de7dde2efd39a373cb81bca9372",
+  "source_sha256": "2cf6341fe923c492a27b0ee49f36611985ab6a4f49a0c0f695a4f184c2f911e6",
+  "alpha": "frozen_v12_trend",
+  "calibration": {
+    "status": "ADMITTED",
+    "reason": "OK",
+    "slope": 0.0009144556998823329,
+    "observations": 42760,
+    "mean_rank_ic": 0.04371061921664811,
+    "icir": 0.11376206041353608,
+    "digest": "0ef4cfddd554ade13d72bd86cb5848c7251d255e72e0e99e1c7928ef0f47870e"
+  },
+  "costs": {
+    "commission_bps": 0,
+    "half_spread_bps": 1,
+    "slippage_bps": 1,
+    "impact_coefficient": 0.1,
+    "borrow_annual": 0.01,
+    "calendar_days": 7,
+    "multiplier": 1.0
+  },
+  "factor_caps": {
+    "B01": {
+      "equity": 0.1,
+      "duration": 0.1,
+      "credit": 0.05,
+      "commodity": 0.1,
+      "usd": 0.08
+    },
+    "B02": {
+      "equity": 0.25,
+      "duration": 0.25,
+      "credit": 0.15,
+      "commodity": 0.25,
+      "usd": 0.2
+    },
+    "B03": {
+      "equity": 0.5,
+      "duration": 0.5,
+      "credit": 0.3,
+      "commodity": 0.5,
+      "usd": 0.4
+    }
+  },
+  "sleeve_caps": {
+    "B01": {
+      "equity": 0.2,
+      "rates": 0.2,
+      "credit": 0.15,
+      "metals": 0.15,
+      "commodity": 0.2,
+      "usd": 0.1
+    },
+    "B02": {
+      "equity": 0.4,
+      "rates": 0.4,
+      "credit": 0.3,
+      "metals": 0.3,
+      "commodity": 0.4,
+      "usd": 0.15
+    },
+    "B03": {
+      "equity": 0.6,
+      "rates": 0.6,
+      "credit": 0.4,
+      "metals": 0.4,
+      "commodity": 0.6,
+      "usd": 0.15
+    }
+  },
+  "net_caps": {
+    "B01": 0.1,
+    "B02": 0.35,
+    "B03": 0.6
+  },
+  "locked_test_loaded_for_selection": false
+}

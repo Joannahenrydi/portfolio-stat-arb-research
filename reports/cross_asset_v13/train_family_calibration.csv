@@ -1,0 +1,2 @@
+family,status,reason,slope,observations,mean_rank_ic,icir,digest
+trend,ADMITTED,OK,0.0009144556998823329,42760,0.04371061921664811,0.11376206041353608,0ef4cfddd554ade13d72bd86cb5848c7251d255e72e0e99e1c7928ef0f47870e

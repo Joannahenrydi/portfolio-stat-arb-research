@@ -1,0 +1,3 @@
+family,status,reason,slope,observations,mean_rank_ic,icir,digest,pooled_correlation,directional_accuracy
+cross_sectional_trend,ADMITTED,OK,0.0009144556998823329,42760,0.04371061921664811,0.11376206041353608,0ef4cfddd554ade13d72bd86cb5848c7251d255e72e0e99e1c7928ef0f47870e,,
+time_series_trend,ADMITTED,OK,0.0010331401105422421,42760,,,a19b439689efb3c89720fdc38a8bcb14c9d67f3e4a5901c891d7426a1814b521,0.028290003304285438,0.5283208606173995

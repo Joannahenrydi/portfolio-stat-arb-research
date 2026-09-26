@@ -1,0 +1,15 @@
+{
+  "status": "REJECTED",
+  "selection": {
+    "status": "REJECTED",
+    "reason": "NO_V13_RISK_BUDGET_PASSED_TRAIN_VALIDATION_GATES",
+    "candidate": null,
+    "locked_test_evaluated": false,
+    "selection_sha256": "106bda7ebb637a6863f8b42fe9966991e60dfcbe41388e18c8dae756605af38b"
+  },
+  "kill_tests": {
+    "status": "NOT_RUN_NO_SELECTED_CANDIDATE"
+  },
+  "locked_test": null,
+  "orders_allowed": false
+}

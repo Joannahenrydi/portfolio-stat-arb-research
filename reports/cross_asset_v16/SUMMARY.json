@@ -1,0 +1,17 @@
+{
+  "status": "REJECTED",
+  "selection": {
+    "status": "REJECTED",
+    "reason": "TRAIN_SELECTED_BLEND_FAILED_DEVELOPMENT_GATES",
+    "candidate": null,
+    "train_selected_candidate": "E050",
+    "locked_test_evaluated": false,
+    "train_selection_sha256": "4a19d4fdc25406b760469d558ec2fd794651b0609898d002bcbe78f15792107b",
+    "development_audit_sha256": "3e716317aa84c4e698df7cdac3b04c89895ff92d12528aaec1049c6d0fdc86db"
+  },
+  "kill_tests": {
+    "status": "NOT_RUN_NO_SELECTED_CANDIDATE"
+  },
+  "locked_test": null,
+  "orders_allowed": false
+}

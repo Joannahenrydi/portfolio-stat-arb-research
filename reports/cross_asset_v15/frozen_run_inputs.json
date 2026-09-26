@@ -1,0 +1,36 @@
+{
+  "protocol_sha256": "cc3a77fe34d1eb0d221a62661ccf9e9f1a4b4f5c27b976baac43db72ae2da3dd",
+  "source_sha256": "2cf6341fe923c492a27b0ee49f36611985ab6a4f49a0c0f695a4f184c2f911e6",
+  "artifacts": {
+    "cross_sectional_trend": {
+      "status": "ADMITTED",
+      "reason": "OK",
+      "slope": 0.0009144556998823329,
+      "observations": 42760,
+      "mean_rank_ic": 0.04371061921664811,
+      "icir": 0.11376206041353608,
+      "digest": "0ef4cfddd554ade13d72bd86cb5848c7251d255e72e0e99e1c7928ef0f47870e"
+    },
+    "time_series_trend": {
+      "status": "ADMITTED",
+      "reason": "OK",
+      "slope": 0.0010331401105422421,
+      "observations": 42760,
+      "pooled_correlation": 0.028290003304285438,
+      "directional_accuracy": 0.5283208606173995,
+      "digest": "a19b439689efb3c89720fdc38a8bcb14c9d67f3e4a5901c891d7426a1814b521"
+    }
+  },
+  "portfolio": "frozen_v13_B03",
+  "costs": {
+    "commission_bps": 0,
+    "half_spread_bps": 1,
+    "slippage_bps": 1,
+    "impact_coefficient": 0.1,
+    "borrow_annual": 0.01,
+    "calendar_days": 7,
+    "multiplier": 1.0
+  },
+  "development_reused": true,
+  "locked_test_loaded_for_selection": false
+}

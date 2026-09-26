@@ -1,0 +1,17 @@
+{
+  "status": "REJECTED",
+  "selection": {
+    "status": "REJECTED",
+    "reason": "NO_TRAIN_QUALIFIED_BLEND",
+    "candidate": null,
+    "train_selected_candidate": null,
+    "locked_test_evaluated": false,
+    "train_selection_sha256": "8839f677a801d236ad56b122191afbb322a7fe03ac74b49584b65ebe94a50c57",
+    "development_audit_sha256": "626ccb512ba12ee0cdfbef06978900f973e15da7e7b2e6a76abd0f24347e1d97"
+  },
+  "kill_tests": {
+    "status": "NOT_RUN_NO_SELECTED_CANDIDATE"
+  },
+  "locked_test": null,
+  "orders_allowed": false
+}
